@@ -1,7 +1,7 @@
 @extends('layouts.standalone')
 
 @section('title')
-    Register
+    {{ __('Register') }}
 @endsection
 
 @section('content')
@@ -51,7 +51,7 @@
                     @endif
 
                     <form class="m-login__form m-form" action="{{ route('register') }}" method="post" autocomplete="off">
-                        @csrf
+                        {{ csrf_field() }}
                         
                         <div class="form-group m-form__group">
                             <div class="m-input-icon m-input-icon--left">

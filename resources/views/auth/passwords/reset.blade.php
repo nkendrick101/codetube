@@ -45,7 +45,7 @@
                     @endif
 
                     <form class="m-login__form m-form" action="{{ route('password.request') }}" method="post" autocomplete="off">
-                        @csrf
+                        {{ csrf_field() }}
 
                         <input type="hidden" name="token" value="{{ $token }}">
 

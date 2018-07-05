@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="m-portlet m-portlet--full-height">
         <form class="m-form m-form--state" action="#" method="POST" autocomplete="off" novalidate>
-          @csrf
+          {{ csrf_field() }}
 
           <div class="m-portlet__head">
             <div class="m-portlet__head-caption">
