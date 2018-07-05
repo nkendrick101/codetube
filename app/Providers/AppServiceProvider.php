@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         \Braintree_Configuration::merchantId(config('services.braintree.merchant_id'));
         \Braintree_Configuration::publicKey(config('services.braintree.public_key'));
         \Braintree_Configuration::privateKey(config('services.braintree.private_key'));
+        \Schema::defaultStringLength(191);
     }
 
     public function register()

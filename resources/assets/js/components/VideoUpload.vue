@@ -44,7 +44,7 @@
                                     <div class="col-lg-10 col-md-12 col-sm-12">
                                         <div class="alert alert-info m-alert m-alert--outline" v-if="!uploadingComplete">
                                             Your video will be available at 
-                                            <a :href="$root.url + '/videos/' + uuid" target="_blank" class="m=link m--link-info">
+                                            <a :href="$root.url + '/videos/' + uuid" target="_blank" class="m-link m-link--info">
                                                 {{ $root.url }}/videos/{{ uuid }}
                                             </a>.
                                         </div>
