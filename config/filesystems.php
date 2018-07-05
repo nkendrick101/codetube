@@ -67,7 +67,7 @@ return [
             'driver' => 'gcs',
             'project_id' => env('GOOGLE_CLOUD_PROJECT_ID'),
             'bucket' => env('GOOGLE_CLOUD_STORAGE_IMAGES_BUCKET'),
-            'key_file' => base_path() . '/tmp/account.json',
+            'key_file' => base_path('tmp') . '/account.json',
             'storage_api_uri' => env('GOOGLE_CLOUD_STORAGE_API_URI'),
         ],
 
@@ -75,7 +75,7 @@ return [
             'driver' => 'gcs',
             'project_id' => env('GOOGLE_CLOUD_PROJECT_ID'),
             'bucket' => env('GOOGLE_CLOUD_STORAGE_VIDEOS_BUCKET'),
-            'key_file' => base_path() . '/tmp/account.json',
+            'key_file' => base_path('tmp') . '/account.json',
             'storage_api_uri' => env('GOOGLE_CLOUD_STORAGE_API_URI'),
         ],
     ],
