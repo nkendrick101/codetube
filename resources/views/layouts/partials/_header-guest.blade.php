@@ -1,5 +1,5 @@
 <div class="top-border"></div>
-<nav id="navbar" class="navbar navbar-light navbar-expand-lg sticky-top">
+<nav id="navbar" class="navbar navbar-light navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand m--margin-right-10" href="{{ route('home') }}">
             <img src="{{ asset('img/logo.png') }}" class="mr-2" width="25" height="30">

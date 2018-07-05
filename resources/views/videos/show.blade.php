@@ -27,7 +27,7 @@
 	</div>
 	<div class="container m--margin-bottom-45">
 		<div class="row">
-			<div class="col-sm-8 m--align-left">
+			<div class="col-sm-6 m--align-left">
 				<div class="card" style="background-color: transparent;">
 					<div class="card-body">
 						<div class="card-info">
@@ -46,7 +46,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4 m--align-right m--margin-top-20">
+			<div class="col-sm-6 m--align-right m--margin-top-20">
 				@if ($video->votesAllowed() && Auth::check())
 					<video-voting video-uuid="{{ $video->uuid }}"></video-voting>
 				@endif

@@ -42,10 +42,10 @@
                                 <div class="row">
                                     <div class="col-form-label col-lg-2 col-sm-12"></div>
                                     <div class="col-lg-10 col-md-12 col-sm-12">
-                                        <div class="alert alert-info m-alert m-alert--outline" v-if="!uploadingComplete">
-                                            Your video will be available at 
-                                            <a :href="$root.url + '/videos/' + uuid" target="_blank" class="m-link m-link--info">
-                                                {{ $root.url }}/videos/{{ uuid }}
+                                        <div class="alert alert-focus" v-if="!uploadingComplete">
+                                            Your video will be available at&nbsp;
+                                            <a :href="$root.url + '/videos/' + uuid" class="m-link m-link--light">
+                                                <strong>{{ $root.url }}/videos/{{ uuid }}</strong>
                                             </a>.
                                         </div>
                                     </div>
@@ -54,16 +54,16 @@
                                 <div class="row">
                                     <div class="col-form-label col-lg-2 col-sm-12"></div>
                                     <div class="col-lg-10 col-md-12 col-sm-12">
-                                        <div class="alert alert-success m-alert m-alert--outline" v-if="uploadingComplete">
-                                            Upload complete. Video is now processing. Go to your 
-                                            <a :href="$root.url + '/videos'" class="m-link m-link--success">
-                                              <strong>videos</strong>
+                                        <div class="alert alert-success" v-if="uploadingComplete">
+                                            Upload complete. Video is now processing. Go to your&nbsp; 
+                                            <a :href="$root.url + '/videos'" class="m-link m-link--light">
+                                                <strong>videos</strong>
                                             </a>.
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <div class="form-group m-form__group row m--margin-top-25">
+                                <div class="form-group m-form__group row m--margin-top-15">
                                     <label class="col-form-label col-lg-2 col-sm-12">
                                         Title
                                     </label>
@@ -134,7 +134,7 @@
 				failed: false,
 				title: 'Untitled',
 				description: null,
-				visibility: 'private',
+				visibility: 'public',
 				status: null,
 				fileProgress: 0,
 				error: null,
@@ -215,6 +215,14 @@
                     this.status = 'Failed to save changes';   
                 });
             }		
+        }, 
+
+        mounted () {
+            window.onbeforeunload = () => {
+                if (this.uploading && !this.uploadingComplete && !this.failed) {
+                    return 'Are you sure you want to navigate away?';
+                }
+            }
         }
 	}
 </script>
