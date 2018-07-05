@@ -22,7 +22,7 @@ class VideoController extends Controller
         return view('videos.show', [
             'video' => $video,
             'user' => $request->user(),
-            'channel' => $video->channel,
+            'channel' => $video->channel
         ]);
     }
 

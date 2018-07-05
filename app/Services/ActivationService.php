@@ -11,13 +11,11 @@ class ActivationService
     protected $activationRepo;
     protected $resendAfter = 24;
 
-    public function __construct(ActivationRepository $activationRepo)
-    {
+    public function __construct (ActivationRepository $activationRepo) {
         $this->activationRepo = $activationRepo;
     }
 
-    public function sendActivationMail($user)
-    {
+    public function sendActivationMail ($user) {
         if ($user->activated || !$this->shouldSend($user)) { 
             return; 
         }
@@ -26,8 +24,7 @@ class ActivationService
         $user->notify(new EmailVerification($token));
     }
 
-    public function activateUser($token)
-    {
+    public function activateUser ($token) {
         $activation = $this->activationRepo->getActivationByToken($token);
 
         if ($activation === null) { 
@@ -42,8 +39,7 @@ class ActivationService
         return $user;
     }
 
-    private function shouldSend($user)
-    {
+    private function shouldSend ($user) {
         $activation = $this->activationRepo->getActivation($user);
         return $activation === null || strtotime($activation->created_at) + 60 * 60 * $this->resendAfter < time();
     }

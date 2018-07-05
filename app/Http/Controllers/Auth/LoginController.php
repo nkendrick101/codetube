@@ -15,14 +15,12 @@ class LoginController extends Controller
     protected $redirectTo = '/home';
     protected $activationService;
 
-    public function __construct(ActivationService $activationService) 
-    {
+    public function __construct (ActivationService $activationService) {
         $this->middleware('guest')->except('logout');
         $this->activationService = $activationService;
     }
 
-    public function activateUser($token) 
-    {
+    public function activateUser ($token) {
         if ($user = $this->activationService->activateUser($token)) {
             auth()->login($user);
             return redirect($this->redirectPath());
@@ -30,8 +28,7 @@ class LoginController extends Controller
         abort(404);
     }
 
-    public function authenticated(Request $request, $user) 
-    {
+    public function authenticated (Request $request, $user) {
         if (!$user->activated) {
             $this->activationService->sendActivationMail($user);
             auth()->logout();
@@ -40,13 +37,11 @@ class LoginController extends Controller
         return redirect()->intended($this->redirectPath());
     }
 
-    public function redirect_to_provider($social_network) 
-    {
+    public function redirect_to_provider ($social_network) {
         return Socialite::driver($social_network)->redirect();
     }
 
-    public function handle_provider_callback($social_network) 
-    {
+    public function handle_provider_callback ($social_network) {
         try {
             $social_user = Socialite::driver($social_network)->user();
         }
@@ -72,7 +67,6 @@ class LoginController extends Controller
             ]);
         }
 
-        // Log user in
         auth()->login($user);
         return redirect()->back();
     }
