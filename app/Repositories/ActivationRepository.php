@@ -46,7 +46,6 @@ class ActivationRepository
         return $this->db->table($this->table)->where('user_id', $user->id)->first();
     }
 
-
     public function getActivationByToken ($token) {
         return $this->db->table($this->table)->where('token', $token)->first();
     }

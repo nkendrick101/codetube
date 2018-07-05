@@ -16,14 +16,12 @@ class RegisterController extends Controller
     protected $redirectTo = '/';
     protected $activationService;
 
-    public function __construct(ActivationService $activationService) 
-    {
+    public function __construct (ActivationService $activationService) {
         $this->middleware('guest', ['except' => 'logout']);
         $this->activationService = $activationService;
     }
 
-    protected function validator(array $data)
-    {
+    protected function validator (array $data) {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -31,8 +29,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function create(array $data)
-    {
+    protected function create (array $data) {
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -47,8 +44,7 @@ class RegisterController extends Controller
         return $user;
     }
 
-    public function register(Request $request) 
-    {
+    public function register (Request $request) {
         $validator = $this->validator($request->all());
 
         if ($validator->fails())
