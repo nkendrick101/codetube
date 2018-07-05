@@ -55,8 +55,27 @@ class VideoController extends Controller
         ]);
     }
 
+    public function update (VideoUpdateRequest $request, Video $video) {
+        //$this->authorize('update', $video);
+        
+        $video->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'visibility' => $request->visibility,
+            'allow_votes' => $request->has('allow_votes'),
+            'allow_comments' => $request->has('allow_comments')
+        ]);
+
+
+        if ($request->ajax()) {
+            return response()->json(null, 200);
+        }
+
+        return redirect()->back()->with('status', 'Video updated.');
+    }
+
     public function delete(Request $request, Video $video) {
-        $this->authorize('delete', $video);
+        //$this->authorize('delete', $video);
         $video->delete();
         return ($request->ajax()) ? response()->json(null, 200) : redirect()->back();
     }

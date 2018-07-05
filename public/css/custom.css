@@ -234,44 +234,6 @@
   background-image: linear-gradient(to right, #fc00ff, #00dbde);
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track-piece {
-  background-color: #FFF;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #CBCBCB;
-  outline: 2px solid #FFF;
-  outline-offset: -2px;
-  border: .1px solid #B7B7B7;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #909090;
-}
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track-piece {
-  background-color: #FFF;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #CBCBCB;
-  outline: 2px solid #FFF;
-  outline-offset: -2px;
-  border: .1px solid #B7B7B7;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #909090;
-}
-
 .blur {
     -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
