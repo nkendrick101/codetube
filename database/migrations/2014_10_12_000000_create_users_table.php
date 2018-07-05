@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('twitter_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->boolean('activated');
+            $table->boolean('activated')->default(false);
         });
     }
 
