@@ -11,7 +11,7 @@ use Pion\Laravel\ChunkUpload\Handler\HandlerFactory;
 class VideoUploadController extends Controller
 {    
    public function store (VideoUploadRequest $request) {
-        $receiver = new FileReceiver('video', $request, HandlerFactory::classFromRequest($request));
+        $receiver = new FileReceiver('video', $request, HandlerFactory::classFromRequest($request), '/tmp');
 
         if ($receiver->isUploaded() === false) {
             throw new UploadMissingFileException();
