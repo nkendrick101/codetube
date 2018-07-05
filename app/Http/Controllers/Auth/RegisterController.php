@@ -33,12 +33,14 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password'])
+            'password' => bcrypt($data['password']),
+            'activated' => 0
         ]);
 
         $user->channel()->create([
             'name' => $data['channel_name'],
             'slug' => uniqid(true),
+            'image' => 'https://storage.googleapis.com/images_codetube/user.png'
         ]);
 
         return $user;

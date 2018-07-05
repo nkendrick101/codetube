@@ -20,7 +20,7 @@ class CreateChannelsTable extends Migration
             $table->string('slug')->unique();
             $table->enum('visibility', ['public', 'private'])->default('public');
             $table->text('description')->nullable();
-            $table->string('image')->url()->default('https://storage.googleapis.com/images_codetube/user.png');
+            $table->string('image')->url();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
