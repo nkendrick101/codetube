@@ -9,6 +9,14 @@ $('#search-form').submit(function () {
     }
 });
 
+$('#search-input').focus(function () {
+    $('.page-content').addClass('blur');
+});
+
+$('#search-input').blur(function () {
+    $('.page-content').removeClass('blur');
+});
+
 /*var client = algoliasearch('GGK8JVIH46', 'd9d4195caee4226baa9dda7912b1853b');
 var index = client.initIndex('forums');
 
