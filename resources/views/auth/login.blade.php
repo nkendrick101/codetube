@@ -92,7 +92,7 @@
                         </div>
 
                         <div class="m-login__form-action m--margin-top-10">
-                            <button class="btn btn-focus btn-block m-btn m-btn--air" type="submit">
+                            <button class="btn btn-focus btn-block" type="submit">
                                 {{ __('Sign in') }}
                             </button>
                         </div>
