@@ -12,7 +12,7 @@
 
        	<div class="collapse navbar-collapse">
             <ul class="m--margin-left-45 navbar-nav mr-auto">
-                <form id="search-form" class="form-inline" action="{{ route('home') }}" method="GET" autocomplete="off">
+                <form id="search-form" class="form-inline" action="{{ route('search') }}" method="GET" autocomplete="off">
                     <div class="m-input-icon m-input-icon--left">
                         <input id="search-input" type="text" name="search_query" class="form-control m-input" placeholder="What will you watch next ?">
                         <span class="m-input-icon__icon m-input-icon__icon--left">

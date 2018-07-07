@@ -60,7 +60,7 @@
 			<div class="row">
 				<div class="col-sm-2"></div>
 				<div class="col-sm-7">
-					<button id="save-btn" type="submit" class="btn btn-sm btn-focus m-btn m-btn--custom m-btn--wide m-btn--icon m-btn--air">
+					<button id="save-btn" type="submit" class="btn btn-sm btn-focus m-btn m-btn--custom m-btn--wide m-btn--icon">
 						Save
 					</button>
 					&nbsp;&nbsp;

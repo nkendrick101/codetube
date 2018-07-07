@@ -62,8 +62,8 @@ class VideoController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'visibility' => $request->visibility,
-            'allow_votes' => $request->has('allow_votes'),
-            'allow_comments' => $request->has('allow_comments')
+            'allow_votes' => $request->has('allow_votes') ? $request->allow_votes : 1,
+            'allow_comments' => $request->has('allow_comments') ? $request->allow_comments : 1 
         ]);
 
 

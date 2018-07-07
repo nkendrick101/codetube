@@ -6,23 +6,25 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="csrf-token" content="{{ csrf_token() }}">
    <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
-   <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/pace.css') }}">
    <link rel="stylesheet" href="{{ asset('css/booster.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/metronic.css') }}">
    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
    <link rel="stylesheet" href="{{ asset('css/line-awesome.css') }}">
    <link rel="stylesheet" href="{{ asset('css/vendors.bundle.css') }}">
    <link rel="stylesheet" href="{{ asset('css/style.bundle.css') }}">
    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800">
 </head>
-   <body>
-      @yield('content')
+   <body class="page-preloading">
+      <div class="page-preloader">
+         <div class="preloader">
+            <div id="preloader-icon" class="m-loader m-loader--lg m-loader--focus"></div>
+         </div>
+      </div>
+      <div class="page-wrapper">
+         @yield('content')
+      </div>
       <script src="{{ asset('js/vendors.bundle.js') }}"></script>
       <script src="{{ asset('js/scripts.bundle.js') }}"></script>
-      <script src="{{ asset('js/aos.js') }}"></script>
-      <script src="{{ asset('js/pace.js') }}"></script>
+      <script src="{{ asset('js/page-preloading.js') }}"></script>
       <script src="{{ asset('js/custom.js') }}"></script>
    </body>
 </html>

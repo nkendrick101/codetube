@@ -33,7 +33,7 @@
 						<div class="card-info">
 							<div class="media">
 				          	<div class="media-left">
-				          		<a href="#">
+				          		<a href="#" data-toggle="m-popover" data-trigger="hover" title="<strong>{{ $channel->user->name }}<strong>" data-placement="top" data-html="true" data-content="{{ $channel->description ? $channel->description : 'Channel has no description' }}" data-skin="dark">
 				          			<img src="{{ $channel->image }}" alt="" class="d-flex mr-3 channel-img img-circle" style="width: 50px; height:auto;">
 				          		</a>
 				          	</div>

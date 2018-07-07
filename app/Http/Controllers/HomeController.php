@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index(Request $request) {
         return view('home', [
-        	'videos' => Video::all(),
+        	'videos' => Video::paginate(15),
         	'videos_processing' => Video::select('uuid')->where('processed', 0)->get()
         ]);
     }

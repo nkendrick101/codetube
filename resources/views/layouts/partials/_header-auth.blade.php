@@ -12,7 +12,7 @@
 
        	<div class="collapse navbar-collapse">
             <ul class="m--margin-left-15 navbar-nav mr-auto">
-                <form id="search-form" class="form-inline" action="{{ route('home') }}" method="GET" autocomplete="off">
+                <form id="search-form" class="form-inline" action="{{ route('search') }}" method="GET" autocomplete="off">
                     <div class="m-input-icon m-input-icon--left">
                         <input id="search-input" type="text" name="search_query" class="form-control m-input" placeholder="What will you watch next ?">
                         <span class="m-input-icon__icon m-input-icon__icon--left">
@@ -26,7 +26,7 @@
 
        		<ul class="navbar-nav ml-auto">
                 <li class="nav-item" style="margin-top: 8px; margin-right: 30px;">
-                    <a href="#" class="btn btn-focus m-btn m-btn m-btn--wide">
+                    <a href="{{ route('plans') }}" class="btn btn-focus m-btn m-btn m-btn--wide">
                         Go premium
                     </a>
                 </li>
@@ -58,6 +58,19 @@
                                                     <span class="m-nav__link-wrap">
                                                         <span class="m-nav__link-text">
                                                             Account
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li class="m-nav__item">
+                                            <a href="/plans" class="m-nav__link">
+                                                <i class="m-nav__link-icon flaticon-gift"></i>
+                                                <span class="m-nav__link-title">
+                                                    <span class="m-nav__link-wrap">
+                                                        <span class="m-nav__link-text">
+                                                            Premium
                                                         </span>
                                                     </span>
                                                 </span>

@@ -28,7 +28,7 @@
 									{{ $user->email }}
 								</a>
 								<br>
-								<a href="#" class="btn btn-sm btn-focus" data-toggle="modal" data-target="#upload-image-modal">
+								<a href="#" class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#upload-image-modal">
 									Change Image
 								</a>
 							</div>

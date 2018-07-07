@@ -30,7 +30,7 @@ Route::post('/videos/{video}/view', 'VideoViewController@create');
 Route::get('/videos/{video}/votes', 'VideoVoteController@show');
 Route::get('/videos/{video}/comments', 'VideoCommentController@index');
 
-Route::get('/search', 'SearchController@index')->name('search');
+Route::get('/search', 'SearchController@search')->name('search');
 
 Route::get('/subscriptions/{channel}', 'ChannelSubscriptionController@show');
 
@@ -63,4 +63,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/card/{token}', 'CardController@getCard');
     Route::post('/card/{token}/update', 'CardController@update');
     Route::get('/card/{token}/delete', 'CardController@delete');
+
+    Route::get('/plans', 'PlanController@index')->name('plans');
 });

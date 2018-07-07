@@ -8,7 +8,8 @@
     }
 
     function slugify (text) {
-        return text.toString().toLowerCase()
+        return text.toString()
+            .toLowerCase()
             .replace(/\s+/g, '-')    
             .replace(/[^\w\-]+/g, '')
             .replace(/\-\-+/g, '-')
@@ -42,7 +43,7 @@
     
     $('.save-btn').click(function(event) {
         event.preventDefault();
-        $(this).removeClass().addClass('btn btn-sm btn-brand m-btn m-btn--custom m-btn--wide m-btn--icon m-loader m-loader--light m-loader--right');
+        $(this).removeClass().addClass('btn btn-sm btn-focus m-btn m-btn--custom m-btn--wide m-btn--icon m-loader m-loader--light m-loader--right');
         $(this).html('Saving');
         $(this).closest('form').submit();
     });

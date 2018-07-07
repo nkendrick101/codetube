@@ -1,5 +1,5 @@
 <script src="{{ asset('js/jquery-card.js') }}"></script>
-<script src="{{ asset('js/jquery-credit-card-validator.js') }}"></script>
+<script src="{{ asset('js/smooth-scroll.js') }}"></script>
 <script>
     // Allow persitent form data on card
     var number = '{{ old('number') }}'.length !== 0 ? '{{ old('number') }}' : '**** **** **** ****';

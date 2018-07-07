@@ -7,15 +7,19 @@ use App\Models\Vote;
 use App\Models\User;
 use App\Models\Channel;
 use App\Models\Comment;
+use App\Traits\Orderable;
 use App\Models\VideoViews;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Traits\Orderable;
 
 class Video extends Model
 {
-    use Searchable, SoftDeletes, Orderable;
+    use Orderable;
+    use Searchable;
+    use SoftDeletes; 
+    use SearchableTrait;
 
     protected $fillable = [
         'title',
@@ -28,6 +32,13 @@ class Video extends Model
         'allow_votes',
         'allow_comments',
         'processed_percentage',
+    ];
+
+    protected $searchable = [
+        'columns' => [
+            'videos.title' => 10,
+            'videos.visibility' => 10,
+        ],
     ];
 
     public function toSearchableArray () {

@@ -79,8 +79,7 @@
   width: 430px;
   border-radius: 10px;
   background-color: #fff;
-  border: 1px solid #d3e0e9;
-  border-top: 5px solid #A26FF9;
+  border: 1px solid #ebedf2;
   padding: 40px;
 }
 
@@ -121,7 +120,7 @@
 }
 
 .m-dropdown__wrapper {
-  padding-top: 2px !important;
+  padding-top: 1px !important;
 }
 
 .m-dropdown__inner {
@@ -230,14 +229,218 @@
 }
 
 .top-border {
-  height: 3px;
+  height: 4px;
   background-image: linear-gradient(to right, #fc00ff, #00dbde);
 }
 
 .blur {
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.pagination > li > a,
+.pagination > li > span,
+.pagination > li > a:hover,
+.pagination > li > span:hover {
+  border-radius: 0px;
+  color: #898b96;
+  border: 1px solid #ddd; }
+
+.page-item.active .page-link {
+  background-color: #e9ecef;
+  border: 1px solid #ddd;
+  color: #898b96;
+}
+
+.aa-input-container {
+  display: inline-block;
+  position: relative;
+}
+
+.aa-dropdown-menu {
+  background-color: #fff;
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border: 1px solid rgba(0,0,0,0.125);
+  border-top: none;
+  font-family: 'booster', sans-serif;
+  width: 100%;
+  margin-top: 11px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.aa-suggestion {
+  color: #6f727d;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 12px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.aa-suggestion:hover, .aa-suggestion.aa-cursor {
+  background: #f7f8fa;
+}
+
+.aa-suggestion > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.aa-suggestion span:first-child {
+  color: #6f727d;
+}
+
+.aa-suggestion span:last-child {
+  font-size: 14px;
+  color: #a9a9a9;
+}
+
+.aa-suggestion img {
+  max-width: 80px;
+  margin-right: 10px;
+}
+
+.aa-suggestions-category {
+  border-top: 1px solid rgba(0,0,0,0.125);
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+  color: #9816f4;
+  font-weight: 600;
+  padding: 6px 12px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.aa-suggestion span:first-child em, .aa-suggestion span:last-child em {
+  font-weight: 600;
+  font-style: normal;
+  color: #000;
+  border-radius: 3px;
+  padding: 2px 0 2px 2px;
+}
+
+.aa-dropdown-menu > div {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+
+.aa-empty {
+  padding: 6px 12px;
+}
+
+.ap-input-icon,
+ .ap-icon-pin {
+  bottom: 20px;
+  right: 20px;
+}
+
+.ap-input-icon svg {
+  fill: #e5e5e5;
+}
+
+.ap-input {
+  line-height: 40px;
+  height: 39px;
+}
+.ap-icon-clear,
+.ap-icon-pin {
+  display: none;
+}
+
+.jp-card.jp-card-identified {
+  box-shadow: none !important;
+}
+
+.page-preloader {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.page-preloading .page-wrapper {
+  opacity: 0;
+  -webkit-transition: all 0.5s 0.3s;
+  -o-transition: all 0.5s 0.3s;
+  transition: all 0.5s 0.3s;
+}
+
+.page-preloading .page-preloader {
+  visibility: visible;
+  opacity: 1;
+}
+
+.page-preloading.loading-done .page-wrapper {
+  opacity: 1;
+}
+
+.page-preloading.loading-done .page-preloader {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.page-preloading.loading-done.link-clicked .page-wrapper {
+  opacity: 0;
+}
+
+.preloader {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+
+#preloader-icon:before {
+  width: 3rem;
+  height: 3rem;
+}
+
+.ap-dropdown-menu {
+  box-shadow: none;
+  border: 1px solid #ebedf2;
+  border-radius: 3px;
+  background: #fff;
+  width: 100%;
+}
+
+.ap-footer,
+.ap-suggestion-icon svg {
+  display: none;
+}
+
+.ap-suggestion {
+  padding-left: 3px;
 }

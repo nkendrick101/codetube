@@ -7,7 +7,7 @@
 @section('content')
     <div class="flex-center full-height">
         <div class="m-grid__item m-grid__item--fluid m-login__wrapper">
-            <div class="m-login__container" data-aos="fade-down">
+            <div class="m-login__container">
                 <div class="m-login__logo text-center m--margin-bottom-15">
                     <a href="{{ route('home') }}">
                         <img src="{{ asset('img/logo.png') }}">
@@ -22,16 +22,16 @@
                     </div>
 
                     @if(session('status'))
-                        <div class="alert alert-success m-alert m-alert--air m-alert--outline">
+                        <div class="alert alert-success m-alert m-alert--outline">
                             {{ session('status') }}
                         </div>
                     @elseif($errors->has('email'))
-                        <div class="alert alert-danger m-alert m-alert--air m-alert--outline">
+                        <div class="alert alert-danger m-alert m-alert--outline">
                             <strong>Ooops! &nbsp;</strong>
                             {{ $errors->first('email') }}
                         </div>
                     @else
-                        <div class="alert alert-warning m-alert m-alert--air m-alert--outline">
+                        <div class="alert alert-warning m-alert m-alert--outline">
                             <strong>{{ __('Notification!') }}</strong>
                             {{ __('Para iniciar o processo de restauracao da sua palavra passe preencha o endereco de email usado durante o registro.') }}
                         </div>

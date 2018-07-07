@@ -1,26 +1,21 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
+namespace App\Models;
 
-class CreatePlansTable extends Migration
+use Illuminate\Database\Eloquent\Model;
+
+class Plan extends Model
 {
-    public function up()
-    {
-        Schema::create('plans', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('slug')->unique();
-            $table->string('braintree_plan');
-            $table->float('cost');
-            $table->text('description')->nullable();
-            $table->timestamps();
-        });
-    }
+    protected $fillable = [
+    	'name', 
+    	'slug', 
+    	'braintree_plan', 
+    	'cost', 
+    	'description'
+    ];
 
-    public function down()
-    {
-        Schema::dropIfExists('plans');
-    }
+    public function getRouteKeyName()
+	{
+	  	return 'slug';
+	}
 }
