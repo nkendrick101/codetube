@@ -112,7 +112,7 @@ class AccountController extends Controller
                 'name' => $request->channel_name,
                 'description' => $request->channel_description,
             ]);
-            return redirect()->back()->with('status', 'Password updated.');
+            return redirect()->back()->with('status', 'Channel updated.');
         }
 
         $request->user()->name = $request->name;

@@ -41,7 +41,7 @@
 				<div class="m-portlet m-portlet--bordered m-portlet--rounded m-portlet--unair m-portlet--tabs">
 					<div class="m-portlet__head">
 						<div class="m-portlet__head-tools">
-							<ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--left m-tabs-line--primary">
+							<ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--left m-tabs-line--focus">
 								<li class="nav-item m-tabs__item">
 									<a href="{{ route('account', ['username' => $user->channel()->first()->slug, 'section' => 'profile']) }}" class="nav-link m-tabs__link {{ $section === 'profile' ? 'active' : '' }}">
 										<i class="flaticon-user"></i>
@@ -75,6 +75,80 @@
 										<i class="flaticon-settings"></i>
 										Settings
 									</a>
+								</li>
+
+								<li class="nav-item">
+									<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="click">
+										<a href="#" class="m-portlet__nav-link btn btn-lg btn-focus m-btn m-btn--icon m-btn--icon-only m-btn--pill m-dropdown__toggle">
+											<i class="la la-plus m--font-bolder"></i>
+										</a>
+										<div class="m-dropdown__wrapper">
+											<div class="m-dropdown__inner">
+												<div class="m-dropdown__body">
+													<div class="m-dropdown__content">
+														<ul class="m-nav">
+															<li class="m-nav__section m-nav__section--first">
+																<span class="m-nav__section-text">
+																	Quick Actions
+																</span>
+															</li>
+															<li class="m-nav__item">
+																<a href="" class="m-nav__link">
+																	<i class="m-nav__link-icon flaticon-share"></i>
+																	<span class="m-nav__link-text">
+																		Create Post
+																	</span>
+																</a>
+															</li>
+															<li class="m-nav__item">
+																<a href="" class="m-nav__link">
+																	<i class="m-nav__link-icon flaticon-chat-1"></i>
+																	<span class="m-nav__link-text">
+																		Send Messages
+																	</span>
+																</a>
+															</li>
+															<li class="m-nav__item">
+																<a href="" class="m-nav__link">
+																	<i class="m-nav__link-icon flaticon-multimedia-2"></i>
+																	<span class="m-nav__link-text">
+																		Upload File
+																	</span>
+																</a>
+															</li>
+															<li class="m-nav__section">
+																<span class="m-nav__section-text">
+																	Useful Links
+																</span>
+															</li>
+															<li class="m-nav__item">
+																<a href="" class="m-nav__link">
+																	<i class="m-nav__link-icon flaticon-info"></i>
+																	<span class="m-nav__link-text">
+																		FAQ
+																	</span>
+																</a>
+															</li>
+															<li class="m-nav__item">
+																<a href="" class="m-nav__link">
+																	<i class="m-nav__link-icon flaticon-lifebuoy"></i>
+																	<span class="m-nav__link-text">
+																		Support
+																	</span>
+																</a>
+															</li>
+															<li class="m-nav__separator m-nav__separator--fit m--hide"></li>
+															<li class="m-nav__item m--hide">
+																<a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
+																	Submit
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</li>
 							</ul>
 						</div>

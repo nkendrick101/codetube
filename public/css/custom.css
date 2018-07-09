@@ -105,9 +105,6 @@
   height: 60px;
   margin-right: 0px !important;
   border-bottom: 0.07rem solid #ebedf2;
-  background-color: rgba(255,255,255,0.97);
-  -webkit-transition: margin-left .5s, background-color .5s;
-  transition: margin-left .5s, background-color .5s;
 }
 
 #search-input {
@@ -229,7 +226,7 @@
 }
 
 .top-border {
-  height: 4px;
+  height: 3px;
   background-image: linear-gradient(to right, #fc00ff, #00dbde);
 }
 

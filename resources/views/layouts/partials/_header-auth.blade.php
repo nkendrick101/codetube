@@ -52,7 +52,7 @@
                                         </li>
 
                                         <li class="m-nav__item">
-                                            <a href="/account/@'{{ $user->channelSlug() }}'/profile" class="m-nav__link">
+                                            <a href="/account/{{ '@' . $user->channelSlug() }}/profile" class="m-nav__link">
                                                 <i class="m-nav__link-icon flaticon-user"></i>
                                                 <span class="m-nav__link-title">
                                                     <span class="m-nav__link-wrap">
