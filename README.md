@@ -72,9 +72,6 @@ A lighweight YouTube clone built around Laravel and Vue.js.
    $ php artisan queue:work --timeout=0
    ```
 
-## Expose the Application to the Wider Internet
-
-Optionally, you can expose the application to the wider Internet via a subdomain in [ngrok](http://ngrok.com/). It will look something like this: `http://<sub-domain>.ngrok.io`.
 
 
 ## Example Pages
