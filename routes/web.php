@@ -19,7 +19,6 @@ Route::get('/{social_network}/login/callback', 'Auth\LoginController@handle_prov
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact', 'ContactController@send');
     
 Route::get('/channel/{channel}', 'ChannelController@show')->name('channel');

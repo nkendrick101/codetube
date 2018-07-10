@@ -22,7 +22,7 @@ A lighweight YouTube clone built around Laravel and Vue.js.
    DB_PASSWORD=password
 
    MAIL_DRIVER=smtp
-   MAIL_HOST=smtp.gmail.com
+   MAIL_HOST=smtp.host
    MAIL_PORT=587
    MAIL_USERNAME=email
    MAIL_PASSWORD=password
@@ -42,7 +42,7 @@ A lighweight YouTube clone built around Laravel and Vue.js.
    ALGOLIA_SECRET=app_secret
    ```
 
-3. Install project dependencies with [Composer](https://getcomposer.org/).
+3. Load project dependencies with [Composer](https://getcomposer.org/).
 
    ```
    $ composer install
@@ -78,16 +78,12 @@ A lighweight YouTube clone built around Laravel and Vue.js.
 
 | Video Player |
 |:---:|
-![Preview](https://ucarecdn.com/bac5e4ea-3248-4a1e-a692-cc0463b710df/videoplayer.png)
+![Preview](https://ucarecdn.com/a4a1e70b-083a-42cb-804c-68826041dc11/videoPlayer.png)
 
 | Premium Subscription With Braintree |
 |:---:|
-![Preview](https://ucarecdn.com/1c56026a-1c96-4bd6-b9ad-c115aa6e5128/premiumsubscription.png)
+![Preview](https://ucarecdn.com/e7133d43-2bec-41f2-94e3-8bddd6b0b84a/premiumSubscriptions.png)
 
 | Credit Card Server Side Validation & Storage with Braintree |
 |:---:|
-![Preview](https://ucarecdn.com/93e16c88-c4b1-4f0d-93c8-29decae81767/storagevalidation.png)
-
-| 2-Factor Aunthentication With Email Verification |
-|:---:|
-![Preview](https://ucarecdn.com/011b29bb-c7be-4604-be08-fe3dc260cfd8/2factorauthentication.png)
+![Preview](https://ucarecdn.com/95d5fab8-5b3a-4591-bf02-994bb3066778/Payments.png)

@@ -25282,7 +25282,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 dictInvalidFileType: 'Unsupported file extension!',
                 dictFileTooBig: 'File size exceeds 5MB!',
                 acceptedFiles: 'video/*',
-                dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop Your Video Here or Click to Upload <br> <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>'
+                dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop Your Video Here or Click to Upload <br> <span class="note needsclick">Drag and drop anywhere you want and start uploading your content now.</span>'
             }
         };
     },
@@ -26799,7 +26799,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "m-alert__text" }, [
           _vm._v(
-            "\n                Commenting on this video is only allowed for signed in members with active accounts. "
+            "\n                Commenting on this video is only allowed for signed members with active accounts. "
           ),
           _c("br"),
           _vm._v("\n                Please "),
@@ -27005,7 +27005,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 dictInvalidFileType: 'Unsupported file extension!',
                 dictFileTooBig: 'File size exceeds 2MB!',
                 acceptedFiles: 'image/*',
-                dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop Your Image Here or Click to Upload <br> <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>'
+                dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop an Image or Click to Upload <br> <span class="note needsclick">Drag and drop anywhere you want and start uploading your channel image.</span>'
             }
         };
     },

@@ -157,7 +157,7 @@
     				dictInvalidFileType: 'Unsupported file extension!',
     				dictFileTooBig: 'File size exceeds 5MB!',
     				acceptedFiles: 'video/*',
-            		dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop Your Video Here or Click to Upload <br> <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>'
+            		dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop Your Video Here or Click to Upload <br> <span class="note needsclick">Drag and drop anywhere you want and start uploading your content now.</span>'
           		}
         	}
   		},

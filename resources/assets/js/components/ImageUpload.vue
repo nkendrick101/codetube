@@ -69,7 +69,7 @@
     				dictInvalidFileType: 'Unsupported file extension!',
     				dictFileTooBig: 'File size exceeds 2MB!',
     				acceptedFiles: 'image/*',
-            		dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop Your Image Here or Click to Upload <br> <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>'
+            		dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop an Image or Click to Upload <br> <span class="note needsclick">Drag and drop anywhere you want and start uploading your channel image.</span>'
           		}
   			}
         },

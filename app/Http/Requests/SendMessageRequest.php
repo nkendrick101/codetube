@@ -6,27 +6,15 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class SendMessageRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
+    public function authorize () {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
-    {
+    public function rules () {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'message' => 'required|max:1000'
+            'message_name' => 'required|string|max:255',
+            'message_email' => 'required|email|max:255',
+            'message_body' => 'required|max:1000'
         ];
     }
 }

@@ -49,6 +49,33 @@
       <script src="{{ asset('js/scripts.bundle.js') }}"></script>
       <script src="{{ asset('js/page-preloading.js') }}"></script>
       <script src="{{ asset('js/custom.js') }}"></script>
+      <script>
+         var status = '{{ session("message_response") }}';
+
+         if (status == 'success') {
+            swal({
+               type: 'success',
+               title: 'Message sent!',
+               text: 'We\'ll be in touch very soon.',
+               confirmButtonClass: "btn btn-focus m-btn m-btn--wide",
+               animation: true
+            });
+         } else if (status == 'error') {
+            swal({
+               type: 'error',
+               title: 'Ooops!',
+               text: 'Something went wrong.',
+               confirmButtonClass: "btn btn-focus m-btn m-btn--wide",
+               animation: true
+            });
+         }
+
+         var response_error = '{{ $errors->has('message_name') || $errors->has('message_email') || $errors->has('message_body') }}';
+        
+         if (response_error) {
+            $('#contact-modal').modal('show');
+         }
+      </script>
       @yield('scripts')
    </body>
 </html>
