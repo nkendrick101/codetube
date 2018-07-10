@@ -11,7 +11,7 @@ A lighweight YouTube clone built around Laravel and Vue.js.
    $ git clone https://github.com/filemonmateus/codetube.git
    ```
 
-2. Setup your environment variables at .env.
+2. Setup environment variables.
 
    ```
    DB_CONNECTION=mysql
@@ -78,12 +78,12 @@ A lighweight YouTube clone built around Laravel and Vue.js.
 
 | Video Player |
 |:---:|
-![Preview](https://ucarecdn.com/a4a1e70b-083a-42cb-804c-68826041dc11/videoPlayer.png)
-
-| Premium Subscription With Braintree |
-|:---:|
-![Preview](https://ucarecdn.com/e7133d43-2bec-41f2-94e3-8bddd6b0b84a/premiumSubscriptions.png)
+![Preview](https://ucarecdn.com/ec3baa00-4226-4c9b-a0ff-3789c1515528/videoPlayer.png)
 
 | Credit Card Server Side Validation & Storage with Braintree |
 |:---:|
-![Preview](https://ucarecdn.com/95d5fab8-5b3a-4591-bf02-994bb3066778/Payments.png)
+![Preview](https://ucarecdn.com/8ed238a4-2cab-47fe-9422-84a88a2205c5/payments.png)
+
+| Premium Subscription |
+|:---:|
+![Preview](https://ucarecdn.com/a3e87bef-de43-424f-9a06-ed1887dc672f/premiumSubscription.png)
