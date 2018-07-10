@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Socialite;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Services\ActivationService;
 use App\Http\Controllers\Controller;
@@ -56,12 +57,12 @@ class LoginController extends Controller
             $user = User::create([
                 'name' => $social_user->getName(),
                 'email' => $social_user->getEmail(),
+                $field => $social_user->getId(),
                 'activated' => 1,
-                $field => $social_user->getId()
             ]);
 
             $user->channel()->create([
-                'name' => $data['channel_name'],
+                'name' => $social_user->getId(),
                 'image' => $social_user->getAvatar(),
                 'slug' => uniqid(true),
             ]);

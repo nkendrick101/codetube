@@ -25,7 +25,7 @@
    <body class="page-preloading">
       <div class="page-preloader">
          <div class="preloader">
-            <div id="preloader-icon" class="m-loader m-loader--lg m-loader--focus"></div>
+            <div id="preloader-icon" class="m-loader m-loader--focus"></div>
          </div>
       </div>
       <div id="app" class="page-wrapper">

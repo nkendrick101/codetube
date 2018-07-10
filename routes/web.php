@@ -13,8 +13,8 @@
 
 Auth::routes();
 Route::get('user/activation/{token}', 'Auth\LoginController@activateUser')->name('user.activate');
-Route::get('/auth/{social_network}/login', 'Auth\LoginController@redirect_to_provider');
-Route::get('/auth/{social_network}/login/callback', 'Auth\LoginController@handle_provider_callback');
+Route::get('/{social_network}/login', 'Auth\LoginController@redirect_to_provider');
+Route::get('/{social_network}/login/callback', 'Auth\LoginController@handle_provider_callback');
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
@@ -31,8 +31,8 @@ Route::get('/videos/{video}/votes', 'VideoVoteController@show');
 Route::get('/videos/{video}/comments', 'VideoCommentController@index');
 
 Route::get('/search', 'SearchController@search')->name('search');
-
 Route::get('/subscriptions/{channel}', 'ChannelSubscriptionController@show');
+Route::get('/profile/{channel}', 'ProfileController@index');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::post('/upload-image', 'ImageUploadController@store');

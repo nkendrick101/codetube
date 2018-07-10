@@ -58,12 +58,6 @@
                 $('#number-form').addClass('has-danger');
                 $('#card-number').addClass('form-control-danger');
                 $('#number-form-input').removeClass('m--hide').html(errNumber);
-
-                var scroll = new SmoothScroll();
-                var anchor = document.querySelector('#credit-card-form');
-                var options = { speed: 5000, easing: 'cubic' };
-                scroll.animateScroll( anchor, options );
-
                 notify('Sorry, an error has occurred.', 'danger');
             }
             else {
@@ -77,7 +71,7 @@
             }
         });
 
-        // validate name
+        // then name
         var name = $('#name').val();
         errName = name.length === 0 ? 'Cardholder is required.' : '';
 
@@ -87,10 +81,6 @@
             $('#name-form-input').removeClass('m--hide').html(errName);
 
             if (!errNumber.length) {
-                var scroll = new SmoothScroll();
-                var anchor = document.querySelector('#cvv-form');
-                var options = { speed: 5000, easing: 'cubic' };
-                scroll.animateScroll( anchor, options );
                 notify('Sorry, an error has occurred.', 'danger');
             }
         }
@@ -101,7 +91,7 @@
             $('#name-form-input').addClass('m--hide').html(errName);
         }
 
-        // validate date
+        // then date
         var date = $('#date').val();
         errDate = date.length === 0 ? 'Credit card expiration date is required.' : parseInt(date.replace(/ /g, '').split('/')[0]) > 12 ? 'Invalid date.' : '';
 
@@ -111,10 +101,6 @@
             $('#date-form-input').removeClass('m--hide').html(errDate);
 
             if (!errNumber.length && !errName.length) {
-                var scroll = new SmoothScroll();
-                var anchor = document.querySelector('#date-form');
-                var options = { speed: 5000, easing: 'cubic' };
-                scroll.animateScroll( anchor, options );
                 notify('Sorry, an error has occurred.', 'danger');
             }
         }
@@ -125,7 +111,7 @@
             $('#date-form-input').addClass('m--hide').html(errDate);
         }
         
-        // validate cvv
+        // then cvv
         var cvv = $('#cvv').val();
         errCVV =  cvv.length === 0 || cvv.length < 3 || (cvv.length === 4 && cardType !== 'amex') ? 'CVV must be 4 digits for American Express and 3 digits for other card types.' : ''; 
 
@@ -135,10 +121,6 @@
             $('#cvv-form-input').removeClass('m--hide').html(errCVV);
 
             if (!errNumber.length && !errName.length && !errDate.length) {
-                var scroll = new SmoothScroll();
-                var anchor = document.querySelector('#cvv-form');
-                var options = { speed: 5000, easing: 'cubic' };
-                scroll.animateScroll( anchor, options );
                 notify('Sorry, an error has occurred.', 'danger');
             }
         }
@@ -149,7 +131,7 @@
             $('#cvv-form-input').addClass('m--hide').html(errCVV);
         }
 
-        // validate address
+        // then address
         var address = $('#address').val();
         errAddress = address.length === 0 ? 'Billing address is required.' : '';
 
@@ -159,10 +141,6 @@
             $('#address-form-input').removeClass('m--hide').html(errAddress);
 
             if (!errNumber.length && !errName.length && !errDate.length && !errCVV.length) {
-                var scroll = new SmoothScroll();
-                var anchor = document.querySelector('#cvv-form');
-                var options = { speed: 5000, easing: 'cubic' };
-                scroll.animateScroll( anchor, options );
                 notify('Sorry, an error has occurred.', 'danger');
             }
         }
@@ -173,7 +151,7 @@
             $('#address-form-input').addClass('m--hide').html(errAddress);
         }
 
-        // validate zipcode
+        // and finally zipcode
         var zipcode = $('#zipcode').val();
         errZip = zipcode.length !== 5 || !(/^\d+$/.test(zipcode)) ? 'Zipcode must be 5 digit number.' : ''; 
 
@@ -183,10 +161,6 @@
             $('#zipcode-form-input').removeClass('m--hide').html(errZip);
 
             if (!errNumber.length && !errName.length && !errDate.length && !errCVV.length && !errAddress.length) {
-                var scroll = new SmoothScroll();
-                var anchor = document.querySelector('#zipcode-form');
-                var options = { speed: 5000, easing: 'cubic' };
-                scroll.animateScroll( anchor, options );
                 notify('Sorry, an error has occurred.', 'danger');
             }
         }
@@ -205,7 +179,7 @@
             $.ajax({
                 url: '{{ config('app.url') }}' + '/braintree',
                 type: 'get',
-            }).done(function (response) {
+            }).success(function (response) {
                 var client = new braintree.api.Client({ clientToken: response.data.token });
                 client.tokenizeCard({
                     number: $('#card-number').val().replace(/ /g, ''),
@@ -213,6 +187,7 @@
                     expirationDate: $('#date').val().replace(/ /g, ''),
                     cvv: $('#cvv').val(),
                     billingAddress: {
+                        address: $('#address').val(),
                         postalCode: $('#zipcode').val()
                     }
                 }, function (err, nonce) {
@@ -254,17 +229,9 @@
     $(window).on('load', function(event) {
         var index = parseInt($('#card').find(":selected").text());
         var cards = JSON.parse('<?= json_encode($cards); ?>');
-
         var number = '{{ old('number') }}'.length !== 0 ? '{{ old('number') }}' : Number.isInteger(index) ? cards[index].maskedNumber.replace('******', cards[index].bin).replace(/(\d{4})/g, '$1 ').replace(/(^\s+|\s+$)/,'') : '**** **** **** ****';
         var name = '{{ old('name') }}'.length !== 0 ? '{{ old('name') }}' : Number.isInteger(index) ? cards[index].cardholderName : 'Full name';
         var date = '{{ old('date') }}'.length !== 0 ? '{{ old('date') }}' : Number.isInteger(index) ? cards[index].expirationDate : '**/**';
-        var type = Number.isInteger(index) ? 'jp-card-' + slugify(cards[index].cardType) + ' jp-card-identified' : '';
-
-        $('.jp-card').addClass(type);
-        $('.jp-card-number').html(number);
-        $('.jp-card-name').html(name);
-        $('.jp-card-expiry').html(date);
-        $('.jp-card-cvc').html('');
 
         $('#card-number').val(number === '**** **** **** ****' ? '' : number);
         $('#name').val(name === 'Full name' ? '' : name);
@@ -286,27 +253,14 @@
                 cvv: '***',
             }
         });
-        
-        // identify credit card brand
-        if (Number.isInteger(index)) {
-            $('.jp-card').addClass('jp-card-' + slugify(cards[index].cardType) + ' jp-card-identified');
-        }
     });
 
     $('#card').on('change', function(event) {
         var index = parseInt($(this).find(":selected").text());
         var cards = JSON.parse('<?= json_encode($cards); ?>');
-
         var number = '{{ old('number') }}'.length !== 0 ? '{{ old('number') }}' : Number.isInteger(index) ? cards[index].maskedNumber.replace('******', cards[index].bin).replace(/(\d{4})/g, '$1 ').replace(/(^\s+|\s+$)/,'') : '**** **** **** ****';
         var name = '{{ old('name') }}'.length !== 0 ? '{{ old('name') }}' : Number.isInteger(index) ? cards[index].cardholderName : 'Full name';
         var date = '{{ old('date') }}'.length !== 0 ? '{{ old('date') }}' : Number.isInteger(index) ? cards[index].expirationDate : '**/**';
-        var type = Number.isInteger(index) ? 'jp-card jp-card-' + slugify(cards[index].cardType) + ' jp-card-identified' : '';
-
-        $('.jp-card').removeClass().addClass(type);
-        $('.jp-card-number').html(number);
-        $('.jp-card-name').html(name);
-        $('.jp-card-expiry').html(date);
-        $('.jp-card-cvc').html('');
 
         $('#card-number').val(number === '**** **** **** ****' ? '' : number);
         $('#name').val(name === 'Full name' ? '' : name);
@@ -328,21 +282,5 @@
                 cvv: '***',
             }
         });
-        
-        // identify credit card brand
-        if (Number.isInteger(index)) {
-            $('.jp-card').addClass('jp-card-' + slugify(cards[index].cardType) + ' jp-card-identified');
-        }
     });
-
-    // Persist window scroll position
-    if ('{{ url()->previous() }}' === '{{ url()->previous() }}' 
-        && '{{ url()->previous() }}' === '{{ config('app.url') }}' + '/account/payment'
-        && ('{{ $errors->count() }}' !== '0' ||  '{{ session('error') }}')) 
-    {
-        var scroll = new SmoothScroll();
-        var anchor = document.querySelector( '#payment-form-container' );
-        var options = { speed: 5000, easing: 'cubic' };
-        scroll.animateScroll( anchor, options );
-    }
 </script>

@@ -6,11 +6,13 @@ use App\Models\Card;
 use App\Models\Video;
 use App\Models\Channel;
 use App\Models\Subscription;
+use Laravel\Cashier\Billable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    use Billable;
     use Notifiable;
 
     /**

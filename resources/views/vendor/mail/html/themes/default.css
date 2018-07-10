@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700');
 
 /* Base */
 body, body *:not(html):not(style):not(br):not(tr):not(code) {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     box-sizing: border-box;
 }
 
@@ -11,7 +11,7 @@ body {
     height: 100%;
     hyphens: auto;
     line-height: 2em;
-    font-size: 16px;
+    font-size: 13px;
     margin: 0;
     -moz-hyphens: auto;
     -ms-word-break: break-all;
@@ -40,39 +40,39 @@ a img {
 /* Typography */
 h1 {
     color: #000;
-    font-size: 35px;
-    font-weight: 100;
+    font-size: 18px;
+    font-weight: 400;
     font-style: normal;
     text-transform: none;
     margin-top: 0;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
     text-align: left;
 }
 
 h2 {
     color: #000;
-    font-size: 30px;
-    font-weight: 100;
+    font-size: 16px;
+    font-weight: 400;
     font-style: normal;
     text-transform: none;
     margin-top: 0;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     text-align: left;
 }
 
 h3 {
     color: #000;
-    font-size: 26px;
-    font-weight: 100;
+    font-size: 14px;
+    font-weight: 400;
     font-style: normal;
     text-transform: none;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     text-align: left;
 }
 
 p {
-    font-weight: 100;
+    font-weight: 400;
     color: #000;
     line-height: 2em;
     margin-top: 0;
@@ -111,13 +111,15 @@ img {
     padding: 70px 0px 25px 0px;
     color: #000;
     text-align: center;
+    display: none;
 }
 
 .header a {
     color: #000;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 35px;
     text-decoration: none;
+    display: none;
 }
 
 .header img {
@@ -147,13 +149,13 @@ img {
 /* Subcopy */
 .subcopy {
     border-top: 1px solid #edeff2;
-    margin-top: 25px;
-    padding-top: 25px;
+    margin-top: 15px;
+    padding-top: 15px;
 }
 
 .subcopy p {
-    font-weight: 100;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 11px;
 }
 
 /* Footer */
@@ -168,7 +170,7 @@ img {
 }
 
 .footer p {
-    font-weight: 100;
+    font-weight: 400;
     color: #000;
     font-size: 14px;
     text-align: center;
@@ -182,7 +184,7 @@ img {
 .table table {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     white-space: wrap;
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
@@ -195,12 +197,12 @@ img {
 .table table > tbody > tr > td,
 .table table > tfoot > tr > th,
 .table table > tfoot > tr > td {
-  padding: 15px;
-  line-height: 1.5;
+  padding: 10px;
+  line-height: 2em;
   vertical-align: top;
   border-bottom: 1px solid #ededed;
   color: #000;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .table table > thead > tr > th {
@@ -223,7 +225,7 @@ table > caption + thead > tr:first-child > td,
 
 /* Buttons */
 .action {
-    margin: 30px auto;
+    margin: 10px auto;
     padding: 0;
     text-align: center;
     width: 100%;
@@ -233,9 +235,9 @@ table > caption + thead > tr:first-child > td,
 }
 
 .button {
-    padding: 0px 20px 0px 20px;
+    padding: 0px 10px 0px 10px;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 12px;
     display: inline-block;
     text-decoration: none;
     outline: none;
@@ -288,7 +290,7 @@ table > caption + thead > tr:first-child > td,
 
 /* Promotions */
 .promotion {
-    background-color: #FFFFFF;
+    background-color: #fff;
     border: 2px dashed #9BA2AB;
     margin: 0;
     margin-bottom: 25px;
@@ -305,8 +307,8 @@ table > caption + thead > tr:first-child > td,
 }
 
 .promotion p {
-    font-weight: 100;
-    font-size: 19px;
+    font-weight: 400;
+    font-size: 12px;
     text-align: center;
 }
 

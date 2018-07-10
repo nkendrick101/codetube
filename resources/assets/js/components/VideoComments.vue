@@ -33,7 +33,7 @@
                     <i class="flaticon-exclamation-2"></i>
                 </div>
                 <div class="m-alert__text">
-                    Commenting on this video is only allowed for signed in members with active accounts. <br>
+                    Commenting on this video is only allowed for signed members with active accounts. <br>
                     Please <a href="/login" class="m-link m-link--secondary">sign in</a> or <a href="/register" class="m-link m-link--secondary">sign up</a> to comment.
                 </div>
             </div>

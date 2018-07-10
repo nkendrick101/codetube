@@ -16,7 +16,7 @@
    <body class="page-preloading">
       <div class="page-preloader">
          <div class="preloader">
-            <div id="preloader-icon" class="m-loader m-loader--lg m-loader--focus"></div>
+            <div id="preloader-icon" class="m-loader m-loader--focus"></div>
          </div>
       </div>
       <div class="page-wrapper">
@@ -25,6 +25,5 @@
       <script src="{{ asset('js/vendors.bundle.js') }}"></script>
       <script src="{{ asset('js/scripts.bundle.js') }}"></script>
       <script src="{{ asset('js/page-preloading.js') }}"></script>
-      <script src="{{ asset('js/custom.js') }}"></script>
    </body>
 </html>

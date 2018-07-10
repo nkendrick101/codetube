@@ -14,6 +14,8 @@
 		>
 			{{ csrf_field() }}
 
+			<input id="nonce" type="hidden" name="nonce">
+
 			<div class="row">
 				<div class="col-lg-7 m--margin-bottom-35">
 					<div class="m-portlet m-portlet--bordered m-portlet--rounded m-portlet--unair">
@@ -64,54 +66,31 @@
 								</label>
 								<div class="col-lg-10">
 									<div class="row">
-										<div class="col-lg-6">
-											<label class="m-option">
-												<span class="m-option__control">
-													<span class="m-radio m-radio--focus">
-														<input type="radio" name="m_option_1" value="1">
-														<span></span>
-													</span>
-												</span>
-												<span class="m-option__label">
-													<span class="m-option__head">
-														<span class="m-option__title">
-															Standart Delevery
-														</span>
-														<span class="m-option__focus">
-															Free
+										@foreach ($plans as $index => $plan)
+											<div class="col-lg-6">
+												<label class="m-option">
+													<span class="m-option__control">
+														<span class="m-radio m-radio--focus">
+															<input type="radio" name="plan" value="{{ $plan->id }}">
+															<span></span>
 														</span>
 													</span>
-													<span class="m-option__body">
-														Estimated 14-20 Day Shipping 
-														(Duties end taxes may be due)
-													</span>
-												</span>
-											</label>
-										</div>
-										<div class="col-lg-6">
-											<label class="m-option">
-												<span class="m-option__control">
-													<span class="m-radio m-radio--focus">
-														<input type="radio" name="m_option_1" value="1">
-														<span></span>
-													</span>
-												</span>
-												<span class="m-option__label">
-													<span class="m-option__head">
-														<span class="m-option__title">
-															Fast Delevery
+													<span class="m-option__label">
+														<span class="m-option__head">
+															<span class="m-option__title">
+																{{ $plan->name }}
+															</span>
+															<span class="m-option__focus">
+																${{ $plan->cost }}
+															</span>
 														</span>
-														<span class="m-option__focus">
-															$&nbsp;8.00
+														<span class="m-option__body">
+															{{ $plan->description }}
 														</span>
 													</span>
-													<span class="m-option__body">
-														Estimated 2-5 Day Shipping
-														(Duties end taxes may be due)
-													</span>
-												</span>
-											</label>
-										</div>
+												</label>
+											</div>
+										@endforeach
 									</div>
 								</div>
 							</div>				

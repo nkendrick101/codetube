@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="text-center m--margin-top-20">
-                    <a href="#" class="btn btn-brand m-btn btn-sm m-btn m-btn--icon btn-facebook">
+                    <a href="/facebook/login" class="btn btn-brand m-btn btn-sm m-btn m-btn--icon btn-facebook">
                         <span>
                             <i class="fa fa-facebook"></i>
                             <span>
@@ -130,7 +130,7 @@
 
                     &nbsp;
 
-                    <a href="#" class="btn btn-brand m-btn btn-sm m-btn m-btn--icon btn-google">
+                    <a href="/google/login" class="btn btn-brand m-btn btn-sm m-btn m-btn--icon btn-google">
                         <span>
                             <i class="fa fa-google"></i>
                             <span>
@@ -141,7 +141,7 @@
 
                     &nbsp;
 
-                    <a href="#" class="btn btn-brand m-btn btn-sm m-btn m-btn--icon btn-twitter">
+                    <a href="/twitter/login" class="btn btn-brand m-btn btn-sm m-btn m-btn--icon btn-twitter">
                         <span>
                             <i class="fa fa-twitter"></i>
                             <span>

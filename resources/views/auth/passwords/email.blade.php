@@ -33,7 +33,7 @@
                     @else
                         <div class="alert alert-warning m-alert m-alert--outline">
                             <strong>{{ __('Notification!') }}</strong>
-                            {{ __('Para iniciar o processo de restauracao da sua palavra passe preencha o endereco de email usado durante o registro.') }}
+                            {{ __('Please provide your registration e-mail and and we will send you a link to initiate your password restoration process.') }}
                         </div>
                     @endif
 
