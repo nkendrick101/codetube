@@ -42,7 +42,7 @@ A lighweight YouTube clone built around Laravel and Vue.js.
    ALGOLIA_SECRET=app_secret
    ```
 
-3. Install the dependencies with [Composer](https://getcomposer.org/).
+3. Install project dependencies with [Composer](https://getcomposer.org/).
 
    ```
    $ composer install
@@ -74,7 +74,7 @@ A lighweight YouTube clone built around Laravel and Vue.js.
 
 ## Expose the Application to the Wider Internet
 
-Optionally, you can expose the application to the wider Internet using [ngrok](http://ngrok.com/) using `ngrok http <port>`. Once ngrok is running, open up your browser and go to your ngrok URL. It will look something like this: `http://<sub-domain>.ngrok.io`.
+Optionally, you can expose the application to the wider Internet via a subdomain in [ngrok](http://ngrok.com/). It will look something like this: `http://<sub-domain>.ngrok.io`.
 
 
 ## Example Pages
@@ -91,6 +91,6 @@ Optionally, you can expose the application to the wider Internet using [ngrok](h
 |:---:|
 ![Preview](https://ucarecdn.com/93e16c88-c4b1-4f0d-93c8-29decae81767/storagevalidation.png)
 
-| 2-Factor Aunthentication |
+| 2-Factor Aunthentication With Email Verification |
 |:---:|
 ![Preview](https://ucarecdn.com/011b29bb-c7be-4604-be08-fe3dc260cfd8/2factorauthentication.png)
