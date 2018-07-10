@@ -60,10 +60,10 @@ A lighweight YouTube clone built around Laravel and Vue.js.
    $ php artisan key:generate
    ```
 
-6. Start the server.
+6. Serve project files with artisan.
 
    ```
-   $ php artisan serve.
+   $ php artisan serve
    ```
 
 7. Inspect jobs.
@@ -84,6 +84,6 @@ A lighweight YouTube clone built around Laravel and Vue.js.
 |:---:|
 ![Preview](https://ucarecdn.com/8ed238a4-2cab-47fe-9422-84a88a2205c5/payments.png)
 
-| Premium Subscription |
+| Premium Subscriptions With Braintree & Cashier |
 |:---:|
 ![Preview](https://ucarecdn.com/a3e87bef-de43-424f-9a06-ed1887dc672f/premiumSubscription.png)
