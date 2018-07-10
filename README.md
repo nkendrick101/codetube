@@ -42,7 +42,7 @@ A lighweight YouTube clone built around Laravel and Vue.js.
    ALGOLIA_SECRET=app_secret
    ```
 
-3. Load project dependencies with [Composer](https://getcomposer.org/).
+3. Load project dependencies with [composer](https://getcomposer.org).
 
    ```
    $ composer install
