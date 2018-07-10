@@ -83,7 +83,3 @@ A lighweight YouTube clone built around Laravel and Vue.js.
 | Credit Card Server Side Validation & Storage with Braintree |
 |:---:|
 ![Preview](https://ucarecdn.com/8ed238a4-2cab-47fe-9422-84a88a2205c5/payments.png)
-
-| Premium Subscriptions With Braintree & Cashier |
-|:---:|
-![Preview](https://ucarecdn.com/a3e87bef-de43-424f-9a06-ed1887dc672f/premiumSubscription.png)
