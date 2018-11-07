@@ -7,18 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vote extends Model
 {
-    protected $fillable = [
-        'type',
-        'user_id'
-    ];
+  protected $fillable = [
+    'type',
+    'user_id'
+  ];
 
-    public function voteable()
-    {
-        return $this->morphTo();
-    }
+  public function voteable () {
+    return $this->morphTo();
+  }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+  public function user () {
+    return $this->belongsTo(User::class);
+  }
 }

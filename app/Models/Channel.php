@@ -11,49 +11,49 @@ use Illuminate\Database\Eloquent\Model;
 
 class Channel extends Model
 {
-    use Searchable;
+  use Searchable;
 
-    protected $fillable = [
-        'name',
-        'slug',
-        'visibility',
-        'description',
-        'image_filename'
-    ];
+  protected $fillable = [
+    'name',
+    'slug',
+    'visibility',
+    'description',
+    'image_filename'
+  ];
 
-    public function user () {
-        return $this->belongsTo(User::class);
-    }
-    
-    public function videos () {
-        return $this->hasMany(Video::class);
-    }
+  public function user () {
+    return $this->belongsTo(User::class);
+  }
 
-    public function getRouteKeyName () {
-        return 'slug';
-    }
+  public function videos () {
+    return $this->hasMany(Video::class);
+  }
 
-    public function getImage () {
-        if (!$this->image_filename) {
-            return config('codetube.buckets.images') . '/channel_default.png';
-        }
+  public function getRouteKeyName () {
+    return 'slug';
+  }
 
-        return config('codetube.buckets.images') . '/' . $this->image_filename;
+  public function getImage () {
+    if (!$this->image_filename) {
+      return config('codetube.buckets.images') . '/channel_default.png';
     }
 
-    public function subscriptions () {
-        return $this->hasMany(Subscription::class);
-    }
+    return config('codetube.buckets.images') . '/' . $this->image_filename;
+  }
 
-    public function subscriptionCount () {
-        return $this->subscriptions->count();
-    }
+  public function subscriptions () {
+    return $this->hasMany(Subscription::class);
+  }
 
-    public function totalVideoViews () {
-        return $this->hasManyThrough(VideoView::class, Video::class)->count();
-    }
+  public function subscriptionCount () {
+    return $this->subscriptions->count();
+  }
 
-    public function isVisible ($id) {
-        return $this->user_id === $id || $this->visibility === 'public' ? true : false;
-    }
+  public function totalVideoViews () {
+    return $this->hasManyThrough(VideoView::class, Video::class)->count();
+  }
+
+  public function isVisible ($id) {
+    return $this->user_id === $id || $this->visibility === 'public' ? true : false;
+  }
 }

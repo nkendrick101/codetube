@@ -8,46 +8,41 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 
 class VideoPolicy
 {
-    use HandlesAuthorization;
+  use HandlesAuthorization;
 
-    public function update(User $user, Video $video)
-    {
-        return $user->id === $video->channel->user_id;
+  public function update(User $user, Video $video) {
+    return $user->id === $video->channel->user_id;
+  }
+
+  public function edit(User $user, Video $video) {
+    return $user->id === $video->channel->user_id;
+  }
+
+  public function delete(User $user, Video $video) {
+    return $user->id === $video->channel->user_id;
+  }
+
+  public function vote(User $user, Video $video) {
+    if (!$video->canBeAccessed($user)) {
+      return false;
     }
 
-    public function edit(User $user, Video $video)
-    {
-        return $user->id === $video->channel->user_id;
+    if (!$video->votesAllowed()) {
+      return false;
     }
 
-    public function delete(User $user, Video $video)
-    {
-        return $user->id === $video->channel->user_id;
+    return true;
+  }
+
+  public function comment(User $user, Video $video) {
+    if (!$video->canBeAccessed($user)) {
+      return false;
     }
 
-    public function vote(User $user, Video $video) 
-    {
-        if (!$video->canBeAccessed($user)) {
-            return false;
-        }
-
-        if (!$video->votesAllowed()) {
-            return false;
-        }
-
-        return true;
+    if (!$video->commentsAllowed()) {
+      return false;
     }
 
-    public function comment(User $user, Video $video)
-    {
-        if (!$video->canBeAccessed($user)) {
-            return false;
-        }
-
-        if (!$video->commentsAllowed()) {
-            return false;
-        }
-
-        return true;
-    }
+    return true;
+  }
 }

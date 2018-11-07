@@ -94,8 +94,8 @@ font-family: "booster";
 font-size: 1.1rem !important;
 line-height: 1.5;
 color: #212529;
-text-align: left; 
-background-size: cover; 
+text-align: left;
+background-size: cover;
 background-repeat: no-repeat;
 }
 
@@ -16692,6 +16692,8 @@ code {
 .m-portlet {
   margin-bottom: 0rem;
   border-top: 4px solid #A26FF9;
+  -webkit-box-shadow: 0 1px 7px rgba(0,0,0,.05);
+  box-shadow: 0 1px 7px rgba(0,0,0,.05);
 }
   .m-portlet .m-portlet__head {
     display: table;
@@ -18485,7 +18487,7 @@ body.m-portlet--fullscreen {
   padding-right: 2rem;
   width: 50%; }
   .m-widget4.m-widget4--progress .m-widget4__progress .m-widget4__progress-wrapper .m-widget17__progress-number {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
     font-weight: 600; }
   .m-widget4.m-widget4--progress .m-widget4__progress .m-widget4__progress-wrapper .m-widget17__progress-label {
     font-size: 0.85rem;

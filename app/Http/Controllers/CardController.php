@@ -9,74 +9,89 @@ use App\Transformers\CardTransformer;
 
 class CardController extends Controller
 {
-    public function getCards (Request $request) {
-    	return response()->json(
-            fractal()->collection($request->user()->cards()->latestFirst()->get())
-                ->transformWith(new CardTransformer)
-                ->toArray()
-        );
+  public function getCards (Request $request) {
+    if (!$request->ajax()) {
+      abort(404);
     }
 
-    public function getCard (Request $request) {
-        $card = Card::where('token', $request->token)->firstOrFail();
+    $cardTokens = $request->user()->cards()->latestFirst()->select('token')->get();
+    $cards = [];
 
-        if ($request->ajax()) {
-            $braintreeCard = CreditCard::find($card->token);
-
-            return response()->json([
-                'number' => $braintreeCard->maskedNumber,
-                'holder' => $card->holder,
-                'date' => $braintreeCard->expirationDate,
-                'cvv' => '***',
-                'type' => $card->type,
-                'token' => $card->token,
-            ], 200);
-        }
-
-        abort(401);
+    foreach ($cardTokens as $result) {
+      if ($card = CreditCard::find($result->token)) {
+        array_push($cards, $card);
+      }
     }
 
-    public static function createOrUpdate ($card) {
-        if ($card['token']) {
-            return CreditCard::update($card['token'], [
-                'cardholderName' => $card['cardholderName'],
-                'number' => $card['number'],
-                'expirationDate' => $card['expirationDate'],
-                'cvv' => $card['cvv'],
-                'options' => [
-                    'makeDefault' => true,
-                    'verifyCard' => true,
-                    'failOnDuplicatePaymentMethod' => true,
-                ]
-            ]);
-        }
+    return response()->json(fractal()->collection($cards)
+      ->transformWith(new CardTransformer)
+      ->toArray()
+    );
+  }
 
-        return CreditCard::create([
-            'customerId' => $card['customerId'],
-            'cardholderName' => $card['cardholderName'],
-            'number' => $card['number'],
-            'expirationDate' => $card['expirationDate'],
-            'cvv' => $card['cvv'],
-            'options' => [
-                'makeDefault' => true,
-                'verifyCard' => true,
-                'failOnDuplicatePaymentMethod' => true,
-            ]
-        ]);
+  public function getCard (Request $request) {
+    if (!$request->ajax()) {
+      abort(404);      
     }
 
-    public function delete (Request $request) {
-        $card = Card::where('token', $request->token)->firstOrFail();
+    $card = Card::where('token', $request->token)->firstOrFail();
+    $braintreeCard = CreditCard::find($card->token);
 
-        try {
-            $result = CreditCard::delete($card->token);
-        } catch (Exception $e) {
-            return redirect()->back()->with('error', 'Sorry, we were unable delete your payment method.');
-        }
+    return response()->json([
+      'number' => $braintreeCard->maskedNumber,
+      'holder' => $braintreeCard->cardholderName,
+      'date' => $braintreeCard->expirationDate,
+      'cvv' => '***',
+      'type' => $braintreeCard->cardType,
+      'token' => $braintreeCard->token,
+    ], 200);
+  }
 
-        if ($result->success) {
-            $card->delete();
-            return redirect()->back()->with('status', 'Credit card deleted with success.');
-        }
+  public static function createOrUpdate ($card) {
+    if ($card['token']) {
+      return CreditCard::update($card['token'], [
+        'cardholderName' => $card['cardholderName'],
+        'number' => $card['number'],
+        'expirationDate' => $card['expirationDate'],
+        'cvv' => $card['cvv'],
+        'options' => [
+          'makeDefault' => true,
+          'verifyCard' => true,
+          'failOnDuplicatePaymentMethod' => true,
+        ]
+      ]);
     }
+
+    return CreditCard::create([
+      'customerId' => $card['customerId'],
+      'cardholderName' => $card['cardholderName'],
+      'number' => $card['number'],
+      'expirationDate' => $card['expirationDate'],
+      'cvv' => $card['cvv'],
+      'options' => [
+        'makeDefault' => true,
+        'verifyCard' => true,
+        'failOnDuplicatePaymentMethod' => true,
+      ]
+    ]);
+  }
+
+  public function delete (Request $request) {
+    if (!$request->ajax()) {
+      abort(404);
+    }
+
+    $card = Card::where('token', $request->token)->firstOrFail();
+
+    try {
+      $result = CreditCard::delete($card->token);
+    } catch (Exception $e) {
+      return response()->json(['error' => 'Sorry, we were unable delete your payment method.']);
+    }
+
+    if ($result->success) {
+      $card->delete();
+      return response()->json(['status' => 'Credit card deleted with success.']);
+    }
+  }
 }

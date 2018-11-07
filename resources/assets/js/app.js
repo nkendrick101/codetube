@@ -15,6 +15,6 @@ Vue.use(VueResource);
 Vue.use(VueSelectize);
 
 const app = new Vue({
-    el: '#app',
-    data: window.codetube,
+  el: '#app',
+  data: window.codetube,
 });

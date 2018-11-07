@@ -1,9 +1,9 @@
 @component('mail::message')
-# Hello!
+  # Hello!
 
-{{ $body }}
+  {{ $body }}
 
-Cheers,<br>
-{{ $name }}<br>
-[{{ $email }}]({{ 'mailto:' . $email }})
+  Cheers,<br>
+  {{ $name }}<br>
+  [{{ $email }}]({{ 'mailto:' . $email }})
 @endcomponent
