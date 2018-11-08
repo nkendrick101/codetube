@@ -63,7 +63,7 @@ class LoginController extends Controller
           'lastName' => strstr($social_user->getName(), ' '),
           'email' => $social_user->getEmail()
         ])->customer->id,
-        $field => $social_user->getId(),
+        `{$field}` => $social_user->getId(),
         'activated' => 1
       ]);
 
