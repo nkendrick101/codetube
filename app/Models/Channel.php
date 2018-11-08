@@ -18,7 +18,7 @@ class Channel extends Model
     'slug',
     'visibility',
     'description',
-    'image_filename'
+    'image'
   ];
 
   public function user () {

@@ -52,25 +52,25 @@ class LoginController extends Controller
     }
 
     $field = $social_network . '_id';
-    $user = User::where($field, $social_user->getId())->first();
+    $user = User::where($field, $social_user->id)->first();
 
     if (!$user) {
       $user = User::create([
-        'name' => $social_user->getName(),
-        'email' => $social_user->getEmail(),
+        'name' => $social_user->name,
+        'email' => $social_user->email,
         'braintree_customer_id' => Customer::create([
-          'firstName' => strtok($social_user->getName(), ' '),
-          'lastName' => strstr($social_user->getName(), ' '),
-          'email' => $social_user->getEmail()
+          'firstName' => strtok($social_user->name, ' '),
+          'lastName' => strstr($social_user->name, ' '),
+          'email' => $social_user->email
         ])->customer->id,
-        `{$field}` => $social_user->getId(),
-        'activated' => 1
+        $field => $social_user->id,
+        'activated' => true
       ]);
 
       $user->channel()->create([
-        'name' => $social_user->getId(),
-        'image' => $social_user->getAvatar(),
-        'slug' => uniqid(true),
+        'name' => $social_user->id,
+        'image' => $social_user->avatar_original,
+        'slug' => uniqid(true)
       ]);
     }
 

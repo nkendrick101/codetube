@@ -108,7 +108,7 @@
           <div class="m-portlet__foot m--padding-left-25 m--padding-right-25">
             <div class="m-form__actions">
               <div class="row">
-                <button class="btn btn-block btn-focus m-btn m-btn--wide modal-btn">
+                <button id="send-btn" class="btn btn-block btn-focus m-btn m-btn--air m-btn--wide modal-btn">
                   Send Message
                 </button>
               </div>
