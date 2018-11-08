@@ -42,7 +42,7 @@ class CardController extends Controller
       'holder' => $braintreeCard->cardholderName,
       'date' => $braintreeCard->expirationDate,
       'cvv' => '***',
-      'type' => $braintreeCard->cardType,
+      'type' => $braintreeCard->cardType === 'American Express' ? 'Amex' : $braintreeCard->cardType,
       'token' => $braintreeCard->token,
     ], 200);
   }

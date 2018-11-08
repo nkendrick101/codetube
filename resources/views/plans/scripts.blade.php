@@ -177,10 +177,10 @@
 
       // Tokenize credit card
       $.ajax({
-        url: '{{ config('app.url') }}' + '/braintree',
+        url: '{{ config('app.url') }}/braintree',
         type: 'GET',
         success: function (response) {
-          var client = new braintree.api.Client({ clientToken: response.data.token });
+          var client = new braintree.api.Client({ clientToken: response.token });
           client.tokenizeCard({
             number: $('#card-number').val().replace(/ /g, ''),
             cardholderName: $('#name').val(),

@@ -103,29 +103,26 @@
         return '\
           <a href="#"\
             class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill"\
-            title="Edit"\
             onclick="event.preventDefault();\
             update_card(\'' + row.id + '\');"\
             data-skin="light"\
             data-toggle="m-tooltip"\
             data-placement="top"\
-            title="Editar"\
+            title="Edit"\
           >\
-              <i class="la la-edit"></i>\
+            <i class="la la-edit"></i>\
           </a>\
           <a href="#"\
             class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill"\
-            title="Remove"\
             onclick="event.preventDefault();\
             delete_card(\'' + row.id + '\');"\
             data-skin="light"\
             data-toggle="m-tooltip"\
             data-placement="top"\
-            title="Remover"\
+            title="Remove"\
           >\
-              <i class="la la-trash"></i>\
-          </a>\
-                ';
+            <i class="la la-trash"></i>\
+          </a>';
       }
     }] 
   });
@@ -142,7 +139,7 @@
     $('#card-number').val('');
     $('.jp-card-number').html('**** **** **** ****');
     $('#name').val('');
-    $('.jp-card-name').html('Titular');
+    $('.jp-card-name').html('Full name');
     $('#date').val('');
     $('.jp-card-expiry').html('**/**');
     $('#cvv').val('');
@@ -151,7 +148,7 @@
 
   // Persist window scroll position
   if ("{{ url()->previous() }}" === "{{ url()->previous() }}" 
-    && "{{ url()->previous() }}" === "{{ config('app.url') }}" + "/account/" + "{{ '@' . $user->channelSlug() }}" + "/payment" 
+    && "{{ url()->previous() }}" === "{{ config('app.url') }}/account/{{ '@' . $user->channelSlug() }}/payment" 
     && ("{{ $errors->count() }}" !== "0" ||  "{{ session('error') }}")) 
   {
     var scroll = new SmoothScroll();
@@ -175,7 +172,7 @@
     }).then(function(result) {
       if (result.value) {
         $.ajax({
-          url: "{{ config('app.url') }}" + '/card/' + token + '/delete',
+          url: "{{ config('app.url') }}/card/" + token + '/delete',
           type: 'POST',
           data: {
             '_token': "{{ csrf_token() }}"
@@ -195,7 +192,7 @@
 
   // update card
   function update_card (token) {
-    var uri = "{{ config('app.url') }}" + '/card/' + token;
+    const uri = "{{ config('app.url') }}/card/" + token;
 
     $.ajax({
       url: uri,
@@ -205,7 +202,7 @@
       }
     }).done(function(response) {
       $('#token').val(response.token);
-      $('.jp-card').addClass('jp-card-' + slugify(response.type) + ' jp-card-identified');
+      $('.jp-card').removeClass().addClass('jp-card jp-card-' + slugify(response.type) + ' jp-card-identified');
       $('.jp-card-number').html(response.number);
       $('#card-number').val(response.number);
       $('.jp-card-name').html(response.holder);

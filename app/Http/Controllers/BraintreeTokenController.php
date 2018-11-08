@@ -7,12 +7,10 @@ use Illuminate\Http\Request;
 
 class BraintreeTokenController extends Controller
 {
-  public function token()
+  public function token(Request $request)
   {
     return response()->json([
-      'data' => [
-        'token' => Braintree_ClientToken::generate(),
-      ]
+      'token' => Braintree_ClientToken::generate(),
     ]);
   }
 }

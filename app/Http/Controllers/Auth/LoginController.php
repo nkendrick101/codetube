@@ -14,7 +14,7 @@ class LoginController extends Controller
 {
   use AuthenticatesUsers;
 
-  protected $redirectTo = '/home';
+  protected $redirectTo = '/';
   protected $activationService;
 
   public function __construct (ActivationService $activationService) {
@@ -75,6 +75,6 @@ class LoginController extends Controller
     }
 
     auth()->login($user);
-    return redirect()->back();
+    return redirect('home');
   }
 }

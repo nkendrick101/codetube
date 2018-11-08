@@ -121,85 +121,89 @@
             </div>
             <div class="m-portlet__body m--margin-bottom-20">
               <div id="card-wrapper" class="m--hide"></div>
-              <div class="form-group m-form__group row {{ $errors->has('card') ? 'has-danger' : '' }} {{ count($cards) === 0 ? 'm--hide' : '' }}">
-                <label class="col-form-label col-lg-3 col-sm-12">
-                  Card No.
-                </label>
-                <div class="col-lg-9 col-md-12 col-sm-12">
-                  <select id="card" name="card" class="form-control {{ $errors->has('card') ? 'form-control-danger' : '' }}">
-                    @foreach($cards as $index => $card)
-                      <option value="{{ $card->token }}" 
-                        data-content="<span class='m--margin-right-10'>
-                          <img src='{{ $card->imageUrl }}' height='20'></span> 
-                          {{ chunk_split(str_replace('******', $card->bin, $card->maskedNumber), 4, ' ') }}" {{ $index === 0 ? 'selected' : '' }}
-                      >
-                        {{ $index }}
-                      </option>
-                    @endforeach
-                  </select>
-                  @if ($errors->has('card'))
-                    <div class="form-control-feedback">
-                      {{ $errors->first('card') }}
-                    </div>
-                  @endif
-                </div>
-              </div>
 
-              <div id="number-form" class="form-group m-form__group row {{ $errors->has('number') ? 'has-danger' : '' }} {{ count($cards) !== 0 ? 'm--hide' : '' }}">
-                <label class="col-form-label col-lg-3 col-sm-12">
-                  Card No.
-                </label>
-                <div class="col-lg-9 col-md-12 col-sm-12">
-                  <div class="m-input-icon m-input-icon--left">
-                    <input
-                      id="card-number" 
-                      class="form-control m-input {{ $errors->has('number') ? 'form-control-danger' : '' }}" 
-                      type="text"
-                      placeholder="Card Number" 
-                      value="{{ old('number') }}" 
-                      autoselect
-                    />
-                    <span class="m-input-icon__icon m-input-icon__icon--left">
-                      <span>
-                        <i class="la la-credit-card"></i>
-                      </span>
-                    </span>
+              @if (count($cards))
+                <div id="number-form" class="form-group m-form__group row {{ $errors->has('card') ? 'has-danger' : '' }}">
+                  <label class="col-form-label col-lg-3 col-sm-12">
+                    Card No.
+                  </label>
+                  <div class="col-lg-9 col-md-12 col-sm-12">
+                    <select id="card" name="card" class="form-control {{ $errors->has('card') ? 'form-control-danger' : '' }}">
+                      @foreach($cards as $index => $card)
+                        <option value="{{ $card->token }}" 
+                          data-content="<span class='m--margin-right-10'>
+                            <img src='{{ $card->imageUrl }}' height='20'></span> 
+                            {{ chunk_split(str_replace('******', $card->bin, $card->maskedNumber), 4, ' ') }}" {{ $card->default ? 'selected' : '' }}
+                        >
+                          {{ $index }}
+                        </option>
+                      @endforeach
+                    </select>
+                    @if ($errors->has('card'))
+                      <div class="form-control-feedback">
+                        {{ $errors->first('card') }}
+                      </div>
+                    @endif
+                    <div id="number-form-input" class="form-control-feedback m--hide"></div>
                   </div>
-                  @if ($errors->has('number'))
-                    <div class="form-control-feedback">
-                      {{ $errors->first('number') }}
-                    </div>
-                  @endif
-                  <div id="number-form-input" class="form-control-feedback m--hide"></div>
                 </div>
-              </div>
+              @else
+                <div id="number-form" class="form-group m-form__group row {{ $errors->has('number') ? 'has-danger' : '' }}">
+                  <label class="col-form-label col-lg-3 col-sm-12">
+                    Card No.
+                  </label>
+                  <div class="col-lg-9 col-md-12 col-sm-12">
+                    <div class="m-input-icon m-input-icon--left">
+                      <input
+                        id="card-number" 
+                        class="form-control m-input {{ $errors->has('number') ? 'form-control-danger' : '' }}" 
+                        type="text"
+                        placeholder="Card Number" 
+                        value="{{ old('number') }}" 
+                        autoselect
+                      />
+                      <span class="m-input-icon__icon m-input-icon__icon--left">
+                        <span>
+                          <i class="la la-credit-card"></i>
+                        </span>
+                      </span>
+                    </div>
+                    @if ($errors->has('number'))
+                      <div class="form-control-feedback">
+                        {{ $errors->first('number') }}
+                      </div>
+                    @endif
+                    <div id="number-form-input" class="form-control-feedback m--hide"></div>
+                  </div>
+                </div>
 
-              <div id="name-form" class="form-group m-form__group row {{ $errors->has('name') ? 'has-danger' : '' }} {{ count($cards) !== 0 ? 'm--hide' : '' }}">
-                <label class="col-form-label col-lg-3 col-sm-12">
-                  Name
-                </label>
-                <div class="col-lg-9 col-md-12 col-sm-12">
-                  <div class="m-input-icon m-input-icon--left">
-                    <input 
-                      id="name" 
-                      class="form-control m-input {{ $errors->has('name') ? 'form-control-danger' : '' }}" 
-                      type="text" 
-                      placeholder="Full name" 
-                    />
-                    <span class="m-input-icon__icon m-input-icon__icon--left">
-                      <span>
-                        <i class="la la-user"></i>
+                <div id="name-form" class="form-group m-form__group row {{ $errors->has('name') ? 'has-danger' : '' }}">
+                  <label class="col-form-label col-lg-3 col-sm-12">
+                    Name
+                  </label>
+                  <div class="col-lg-9 col-md-12 col-sm-12">
+                    <div class="m-input-icon m-input-icon--left">
+                      <input 
+                        id="name" 
+                        class="form-control m-input {{ $errors->has('name') ? 'form-control-danger' : '' }}" 
+                        type="text" 
+                        placeholder="Full name" 
+                      />
+                      <span class="m-input-icon__icon m-input-icon__icon--left">
+                        <span>
+                          <i class="la la-user"></i>
+                        </span>
                       </span>
-                    </span>
-                  </div>
-                  @if ($errors->has('name'))
-                    <div class="form-control-feedback">
-                      {{ $errors->first('name') }}
                     </div>
-                  @endif
-                  <div id="name-form-input" class="form-control-feedback m--hide"></div>
+                    @if ($errors->has('name'))
+                      <div class="form-control-feedback">
+                        {{ $errors->first('name') }}
+                      </div>
+                    @endif
+                    <div id="name-form-input" class="form-control-feedback m--hide"></div>
+                  </div>
                 </div>
-              </div>
+              @endif
 
               <div id="date-form" class="form-group m-form__group row {{ $errors->has('date') ? 'has-danger' : '' }}">
                 <label class="col-form-label col-lg-3 col-sm-12">

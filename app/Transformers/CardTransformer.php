@@ -12,7 +12,8 @@ class CardTransformer extends TransformerAbstract
       'holder' => $card->cardholderName,
       'last4' => $card->last4,
       'type' => $card->cardType,
-      'image' => $card->imageUrl
+      'image' => $card->imageUrl,
+      'default' => $card->default
     ];
   }
 }
