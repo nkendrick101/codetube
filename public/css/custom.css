@@ -21,6 +21,27 @@
     font-size: 15px !important;
 }
 
+.form-control:focus {
+    border: 1px solid #a26ff9;
+    -webkit-box-shadow: 0px 3px 20px 0px rgba(34, 185, 255, 0.11);
+    -moz-box-shadow: 0px 3px 20px 0px rgba(34, 185, 255, 0.11);
+    box-shadow: 0px 3px 20px 0px rgba(34, 185, 255, 0.11);
+}
+
+.form-control:hover {
+    -webkit-box-shadow: 0px 3px 20px 0px rgba(34, 185, 255, 0.11);
+    -moz-box-shadow: 0px 3px 20px 0px rgba(34, 185, 255, 0.11);
+    box-shadow: 0px 3px 20px 0px rgba(34, 185, 255, 0.11);
+}
+
+.jp-card .jp-card-front .jp-card-lower .jp-card-name,
+.jp-card .jp-card-front .jp-card-lower .jp-card-number,
+.jp-card .jp-card-front .jp-card-lower .jp-card-expiry,
+.jp-card .jp-card-front .jp-card-lower .jp-card-cvc {
+    font-family: "booster" !important;
+    font-weight: 600;
+}
+
 .btn-facebook {
     color: #fff !important;
     border-color: #3b5998 !important;
@@ -76,13 +97,15 @@
 }
 
 .m-login__container {
-    width: 430px;
+    width: 420px;
     border-radius: 10px;
     background-color: #fff;
-    border: 1px solid #ebedf2;
+    border: 1px solid #d3e0e9;
+    border-top: 5px solid #a26ff9;
     padding: 40px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+    -moz-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
 }
 
 .m-login__title {

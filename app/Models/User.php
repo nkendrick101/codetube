@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Card;
 use App\Models\Video;
 use App\Models\Channel;
+use App\Models\Setting;
 use App\Models\Subscription;
 use Laravel\Cashier\Billable;
 use Illuminate\Notifications\Notifiable;
@@ -42,6 +43,10 @@ class User extends Authenticatable
   public function videos () {
     return $this->hasManyThrough(Video::class, Channel::class);
   }
+
+  public function setting () {
+    return $this->hasOne(Setting::class);
+  } 
 
   public function subscriptions () {
     return $this->hasMany(Subscription::class);

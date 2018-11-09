@@ -39,7 +39,7 @@ class RegisterController extends Controller
 
     $user->channel()->create([
       'name' => $data['channel_name'],
-      'slug' => uniqid(true),
+      'slug' => uniqid(true)
     ]);
 
     return $user;

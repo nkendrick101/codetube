@@ -72,6 +72,15 @@ class LoginController extends Controller
         'image' => $social_user->avatar_original,
         'slug' => uniqid(true)
       ]);
+
+      $user->setting()->create([
+        'content_notification' => true,
+        'password_notification' => true,
+        'post_notification' => true,
+        'topic_notification' => true,
+        'profile_visibility' => true,
+        'email_notification' => true,
+      ]);
     }
 
     auth()->login($user);

@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Card extends Model
 {
   protected $fillable = [
-    'holder',
-    'type',
-    'last4',
     'token',
-    'image',
   ];
 
   public function user () {

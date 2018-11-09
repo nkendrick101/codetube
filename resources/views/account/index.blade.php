@@ -66,13 +66,15 @@
                   </a>
                 </li>
 
-                <li class="nav-item m-tabs__item">
-                  <a href="{{ route('account', ['username' => $user->channel()->first()->slug, 'section' => 'password']) }}" 
-                    class="nav-link m-tabs__link {{ $section === 'password' ? 'active' : '' }}">
-                    <i class="flaticon-lock-1"></i>
-                    Password
-                  </a>
-                </li>
+                @if ($user->password)
+                  <li class="nav-item m-tabs__item">
+                    <a href="{{ route('account', ['username' => $user->channel()->first()->slug, 'section' => 'password']) }}" 
+                      class="nav-link m-tabs__link {{ $section === 'password' ? 'active' : '' }}">
+                      <i class="flaticon-lock-1"></i>
+                      Password
+                    </a>
+                  </li>
+                @endif
 
                 <li class="nav-item m-tabs__item">
                   <a href="{{ route('account', ['username' => $user->channel()->first()->slug, 'section' => 'settings']) }}" 
@@ -99,9 +101,7 @@
             </div>
 
             <div class="tab-pane {{ $section === 'profile' ? 'active' : '' }}">
-              @if ($section === 'profile')
-                @include('account.partials.profile')
-              @endif
+              @include('account.partials.profile')
             </div>
 
             <div class="tab-pane {{ $section === 'channel' ? 'active' : '' }}">

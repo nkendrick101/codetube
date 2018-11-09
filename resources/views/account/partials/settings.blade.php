@@ -1,6 +1,6 @@
 <form action="/account/{{ '@' . $user->channelSlug() }}/settings"
   class="m-form m-form--fit m-form--label-align-right m--form-state" 
-  method="post"
+  method="POST"
 >
   {{ csrf_field() }}
 
@@ -60,7 +60,7 @@
       <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-7">
-          <button id="save-btn" type="submit" class="btn btn-sm btn-focus m-btn m-btn--custom m-btn--wide m-btn--icon">
+          <button type="submit" class="btn btn-sm btn-focus m-btn m-btn--custom m-btn--wide m-btn--icon save-btn">
             Save
           </button>
           &nbsp;&nbsp;

@@ -42,6 +42,17 @@ class ActivationService
       'email' => $user->email
     ])->customer->id;
 
+    // and finally set his/her settings
+    $user->setting()->create([
+      'content_notification' => true,
+      'password_notification' => true,
+      'post_notification' => true,
+      'topic_notification' => true,
+      'profile_visibility' => true,
+      'email_notification' => true,
+    ]);
+
+    // and that's it
     $user->save();
     $this->activationRepo->deleteActivation($token);
 

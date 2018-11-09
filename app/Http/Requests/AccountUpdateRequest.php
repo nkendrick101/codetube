@@ -35,13 +35,14 @@ class AccountUpdateRequest extends FormRequest
         'new_password' => 'required|min:6|confirmed',
         'new_password_confirmation' => 'required|min:6'
       ];
-    } else if ($section === 'channel') {
+    } 
+    else if ($section === 'channel') {
       return [
         'channel_name' => 'required|alpha_num|max:255|unique:channels,name,' . $user_id,
         'channel_description' => 'nullable|min:6|max:500'
       ];
     }
-    else if ($section === 'privacy') {
+    else if ($section === 'settings') {
       return [];
     }
 

@@ -62,7 +62,7 @@
               </div>
             @endif
             <span class="m-form__help">
-              Please provide only numbers indicated in your card
+              Provide only numbers indicated in your card
             </span>
           </div>
         </div>
@@ -121,7 +121,7 @@
               </div>
             @endif
             <span class="m-form__help">
-              Please enter a date in <code>mm/yy</code> or <code>mm/yyyy</code> format
+              Enter a date in <code>mm/yy</code> or <code>mm/yyyy</code> format
             </span>
           </div>
         </div>
@@ -150,7 +150,7 @@
               </div>
             @endif
             <span class="m-form__help">
-              Please enter a cvv in <code>***</code> formtat
+              Enter a cvv in <code>***</code> formtat
             </span>
           </div>
         </div>

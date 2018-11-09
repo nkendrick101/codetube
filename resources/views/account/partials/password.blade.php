@@ -1,6 +1,6 @@
 <form action="/account/{{ '@' . $user->channelSlug() }}/password"
   class="m-form m-form--fit m-form--label-align-right m-form--state" 
-  method="post"
+  method="POST"
 >
   {{ csrf_field() }}
 

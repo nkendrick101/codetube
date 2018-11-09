@@ -90,8 +90,7 @@ class AccountController extends Controller
       $request->user()->setting()->update([
         'content_notification' => $request->content_notification === 'on' ? true : false,
         'password_notification' => $request->password_notification === 'on' ? true : false,
-        'post_notification' => $request->post_notification === 'on' ? true : false,
-        'topic_notification' => $request->topic_notification === 'on' ? true : false,
+        'reply_notification' => $request->post_notification === 'on' ? true : false,
         'profile_visibility' => $request->profile_visibility === 'on' ? true : false,
         'email_notification' => $request->email_notification === 'on' ? true : false,
       ]);

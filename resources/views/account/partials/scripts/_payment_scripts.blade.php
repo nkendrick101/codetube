@@ -2,9 +2,9 @@
 <script src="{{ asset('js/smooth-scroll.js') }}"></script>
 <script>
   // Allow persitent form data on card
-  var number = '{{ old('number') }}'.length !== 0 ? '{{ old('number') }}' : '**** **** **** ****';
+  var number = '{{ old('number') }}'.length !== 0 ? '{{ old('number') }}' : '•••• •••• •••• ••••';
   var name = '{{ old('name') }}'.length !== 0 ? '{{ old('name') }}' : 'Full name';
-  var expiry = '{{ old('expiry') }}'.length !== 0 ? '{{ old('expiry') }}' : '**/**';
+  var expiry = '{{ old('expiry') }}'.length !== 0 ? '{{ old('expiry') }}' : '••/••';
 
   // setup credit card form
   $('#credit-card-form').card({
@@ -19,7 +19,7 @@
       number: number,
       name: name,
       expiry: expiry,
-      cvv: '***',
+      cvv: '•••',
     }
   });
 
@@ -81,7 +81,7 @@
       title: "Card number",
       width: 150,
       template: function (response) {
-        return '*** **** **** ' + response.last4;
+        return '•••• •••• •••• ' + response.last4;
       }
     }, {
       field: "image",
@@ -137,13 +137,13 @@
     scroll.animateScroll( anchor, options );
     $('.jp-card').removeClass('jp-card-identified');
     $('#card-number').val('');
-    $('.jp-card-number').html('**** **** **** ****');
+    $('.jp-card-number').html('•••• •••• •••• ••••');
     $('#name').val('');
     $('.jp-card-name').html('Full name');
     $('#date').val('');
-    $('.jp-card-expiry').html('**/**');
+    $('.jp-card-expiry').html('••/••');
     $('#cvv').val('');
-    $('.jp-card-cvc').html('***');
+    $('.jp-card-cvc').html('•••');
   });
 
   // Persist window scroll position
