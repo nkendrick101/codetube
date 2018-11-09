@@ -59,6 +59,6 @@ class TranscodeVideo implements ShouldQueue
     // Record transcoding proccess
     $my_video->video_id = $video_id;
     $my_video->processed = true;
-    $my_video->save();*/
+    $my_video->save();
   }
 }
