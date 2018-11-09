@@ -73,13 +73,7 @@ class LoginController extends Controller
         'slug' => uniqid(true)
       ]);
 
-      $user->setting()->create([
-        'content_notification' => true,
-        'password_notification' => true,
-        'reply_notification' => true,
-        'profile_visibility' => true,
-        'email_notification' => true
-      ]);
+      $user->setting()->create();
     }
 
     auth()->login($user);

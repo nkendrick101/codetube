@@ -43,13 +43,7 @@ class ActivationService
     ])->customer->id;
 
     // and finally set his/her settings
-    $user->setting()->create([
-      'content_notification' => true,
-      'password_notification' => true,
-      'reply_notification' => true,
-      'profile_visibility' => true,
-      'email_notification' => true
-    ]);
+    $user->setting()->create();
 
     // and that's it
     $user->save();

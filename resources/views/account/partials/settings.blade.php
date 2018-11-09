@@ -13,7 +13,7 @@
         <div class="m-checkbox-list">
           <label class="m-checkbox m-checkbox--solid m-checkbox--focus">
             <input type='hidden' name='content_notification' value='off'/>
-            <input type="checkbox" name="content_notification" {{ optional($user->setting)->content_notification === 1 ? 'checked' : '' }} />
+            <input type="checkbox" name="content_notification" {{ optional($user->setting)->content_notification === true ? 'checked' : '' }} />
             Quando um novo material e lancado
             <span></span>
           </label>
@@ -21,7 +21,7 @@
             <input type="hidden" name="password_notification" value="off">
             <input type="checkbox" 
               name="password_notification" 
-              {{ optional($user->setting)->password_notification === 1 ? 'checked' : '' }}
+              {{ optional($user->setting)->password_notification === true ? 'checked' : '' }}
             />
             Quando a minha palavra passe e mudada
             <span></span>
@@ -40,13 +40,13 @@
         <div class="m-checkbox-list">
           <label class="m-checkbox m-checkbox--solid m-checkbox--focus">
             <input type="hidden" name="profile_visibility" value="off" />
-            <input type="checkbox" name="profile_visibility" {{ optional($user->setting)->profile_visibility === 1 ? 'checked' : '' }} />
+            <input type="checkbox" name="profile_visibility" {{ optional($user->setting)->profile_visibility === true ? 'checked' : '' }} />
             Permitir os outros usuarios a acederem of meu perfil
             <span></span>
           </label>
           <label class="m-checkbox m-checkbox--solid m-checkbox--focus">
             <input type="hidden" name="email_notification" value="off" />
-            <input type="checkbox" name="email_notification" {{ optional($user->setting)->email_notification === 1 ? 'checked' : '' }} />
+            <input type="checkbox" name="email_notification" {{ optional($user->setting)->email_notification === true ? 'checked' : '' }} />
             Desactivar notificacao por email
             <span></span>
           </label>
