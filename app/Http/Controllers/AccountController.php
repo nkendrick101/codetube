@@ -87,8 +87,6 @@ class AccountController extends Controller
     }
 
     else if ($request->section === 'settings') {
-      return response()->json($request->all());
-
       $request->user()->setting()->update([
         'content_notification' => $request->content_notification === 'on' ? true : false,
         'password_notification' => $request->password_notification === 'on' ? true : false,
