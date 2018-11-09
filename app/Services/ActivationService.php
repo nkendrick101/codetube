@@ -48,7 +48,7 @@ class ActivationService
       'password_notification' => true,
       'reply_notification' => true,
       'profile_visibility' => true,
-      'email_notification' => true,
+      'email_notification' => true
     ]);
 
     // and that's it
