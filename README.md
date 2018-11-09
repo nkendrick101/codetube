@@ -14,32 +14,79 @@ A lighweight YouTube clone built around Laravel and Vue.js.
 2. Setup environment variables.
 
    ```
+   APP_NAME=Codetube
+   APP_ENV=local
+   APP_KEY=
+   APP_DEBUG=true
+   APP_PORT=8000
+   APP_URL="http://localhost:${APP_PORT}"
+
+   LOG_CHANNEL=stack
+
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=database
-   DB_USERNAME=username
-   DB_PASSWORD=password
+   DB_DATABASE=homestead
+   DB_USERNAME=homestead
+   DB_PASSWORD=secret
+
+   BROADCAST_DRIVER=log
+   CACHE_DRIVER=file
+   SESSION_DRIVER=file
+   SESSION_LIFETIME=120
+   QUEUE_DRIVER=database
+
+   REDIS_HOST=127.0.0.1
+   REDIS_PASSWORD=null
+   REDIS_PORT=6379
 
    MAIL_DRIVER=smtp
-   MAIL_HOST=smtp.host
-   MAIL_PORT=587
-   MAIL_USERNAME=email
-   MAIL_PASSWORD=password
-   MAIL_ENCRYPTION=tls
+   MAIL_HOST=smtp.mailtrap.io
+   MAIL_PORT=2525
+   MAIL_USERNAME=null
+   MAIL_PASSWORD=null
+   MAIL_ENCRYPTION=null
 
-   GOOGLE_CLOUD_PROJECT_ID=project_id
-   GOOGLE_CLOUD_STORAGE_IMAGES_BUCKET=images_bucket
-   GOOGLE_CLOUD_STORAGE_VIDEOS_BUCKET=videos_bucket
+   PUSHER_APP_ID=
+   PUSHER_APP_KEY=
+   PUSHER_APP_SECRET=
+   PUSHER_APP_CLUSTER=mt1
+
+   MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+   MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+
+   GOOGLE_CLOUD_PROJECT_ID=
+   GOOGLE_CLOUD_STORAGE_IMAGES_BUCKET=images_codetube
+   GOOGLE_CLOUD_STORAGE_VIDEOS_BUCKET=videos_codetube
    GOOGLE_CLOUD_STORAGE_API_URI=https://storage.googleapis.com
 
-   FFMPEG_BINARY=/path/to/ffmpeg/binary
-   FFPROBE_BINARY=/path/to/ffprobe/binary
+   FFMPEG_BINARY=/path/to/ffmpeg
+   FFPROBE_BINARY=/path/to/ffprobe
    FFMPEG_THREADS=12
    TIMEOUT=3600
 
-   ALGOLIA_APP_ID=app_id
-   ALGOLIA_SECRET=app_secret
+   ALGOLIA_APP_ID=
+   ALGOLIA_SECRET=
+
+   BRAINTREE_ENV=sandbox
+   BRAINTREE_MERCHANT_ID=
+   BRAINTREE_PUBLIC_KEY=
+   BRAINTREE_PRIVATE_KEY=
+
+   FACEBOOK_CLIENT_ID=
+   FACEBOOK_CLIENT_SECRET=
+   FACEBOOK_REDIRECT_URL="${APP_URL}/facebook/login/callback"
+
+   GOOGLE_CLIENT_ID=
+   GOOGLE_CLIENT_SECRET=
+   GOOGLE_REDIRECT_URL="${APP_URL}/google/login/callback"
+
+   TWITTER_CLIENT_ID=
+   TWITTER_CLIENT_SECRET=
+   TWITTER_REDIRECT_URL="${APP_URL}/twitter/login/callback"
+
+   SCOUT_DRIVER=algolia
+   SCOUT_QUEUE=true
    ```
 
 3. Load project dependencies with [composer](https://getcomposer.org).
