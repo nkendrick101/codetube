@@ -31,8 +31,8 @@ class TranscodeVideo implements ShouldQueue
       'timeout' => config('ffmpeg.config.timeout'),
     ]);
 
-    $media = $ffmpeg->open(public_path('uploads') . '/' . $this->filename);
-    /*$my_video = Video::where('video_filename', $this->filename)->firstOrFail();
+    /*$media = $ffmpeg->open(public_path('uploads') . '/' . $this->filename);
+    $my_video = Video::where('video_filename', $this->filename)->firstOrFail();
     $format = new FFMpeg\Format\Video\WebM();
 
     $format->on('progress', function ($video, $format, $percentage) use ($my_video) {
