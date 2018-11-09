@@ -46,8 +46,7 @@ class ActivationService
     $user->setting()->create([
       'content_notification' => true,
       'password_notification' => true,
-      'post_notification' => true,
-      'topic_notification' => true,
+      'reply_notification' => true,
       'profile_visibility' => true,
       'email_notification' => true,
     ]);
