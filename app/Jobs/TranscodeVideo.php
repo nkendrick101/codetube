@@ -35,7 +35,7 @@ class TranscodeVideo implements ShouldQueue
     $my_video = Video::where('video_filename', $this->filename)->firstOrFail();
     $format = new FFMpeg\Format\Video\WebM();
 
-    $format->on('progress', function ($video, $format, $percentage) use ($my_video) {
+    /*$format->on('progress', function ($video, $format, $percentage) use ($my_video) {
       $my_video->processed_percentage = $percentage;
       $my_video->save();
     });
@@ -59,6 +59,6 @@ class TranscodeVideo implements ShouldQueue
     // Record transcoding proccess
     $my_video->video_id = $video_id;
     $my_video->processed = true;
-    $my_video->save();
+    $my_video->save();*/
   }
 }
