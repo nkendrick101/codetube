@@ -26,7 +26,7 @@ $("#search-form").submit(function() {
     }
 });
 
-var client = algoliasearch("2ZIRRHJHQD", "7c46f37c2fc05b633dd074bb6fa600e6");
+var client = algoliasearch("BHNLIWJU3E", "2e50ffd7be29006ad749f5cd0fbf040d");
 var index = client.initIndex("videos");
 
 autocomplete("#search-input", { hint: false }, [
