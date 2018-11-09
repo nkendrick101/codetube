@@ -43,84 +43,91 @@
 </template>
 
 <script>
-  import vue2Dropzone from 'vue2-dropzone';
+import vue2Dropzone from "vue2-dropzone";
 
-  export default {
+export default {
     components: {
-      vueDropzone: vue2Dropzone,
+        vueDropzone: vue2Dropzone
     },
 
-    data () {
-      return {
-        dropzoneOptions: {
-          method: 'POST',
-          url: '/upload-image',
-          maxFiles: 1,
-          maxFilesize: 2,
-          paramName: 'image',
-          filesizeBase: 1024,
-          autoProcessQueue: true,
-          chunking: true,
-          retryChunks: true,
-          retryChunksLimit: 2,
-          headers: { 'X-CSRF-Token': this.token },
-          clickable: ['#addNewImage', '#dropzoneImage'],
-          dictMaxFilesExceeded: 'Maximum number of files has been exceeded!',
-          dictInvalidFileType: 'Unsupported file extension!',
-          dictFileTooBig: 'File size exceeds 2MB!',
-          acceptedFiles: 'image/*',
-          dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop an Image or Click to Upload <br> <span class="note needsclick">Drag and drop anywhere you want and start uploading your channel image.</span>'
-        }
-      }
+    data() {
+        return {
+            dropzoneOptions: {
+                method: "POST",
+                url: "/upload-image",
+                maxFiles: 1,
+                maxFilesize: 2,
+                paramName: "image",
+                filesizeBase: 1024,
+                autoProcessQueue: true,
+                chunking: true,
+                retryChunks: true,
+                retryChunksLimit: 2,
+                headers: { "X-CSRF-Token": this.token },
+                clickable: ["#addNewImage", "#dropzoneImage"],
+                dictMaxFilesExceeded:
+                    "Maximum number of files has been exceeded!",
+                dictInvalidFileType: "Unsupported file extension!",
+                dictFileTooBig: "File size exceeds 2MB!",
+                acceptedFiles: "image/*",
+                dictDefaultMessage:
+                    '<i class="flaticon-multimedia-1" style="font-weight: 500; font-size: 65px;"></i> <br> <span style="font-size: 20px;">Drop an Image or Click to Upload</span> <br> <span class="note needsclick" style="font-size: 14px;">Drag and drop anywhere you want and start uploading your channel image.</span>'
+            }
+        };
     },
 
     methods: {
-      errorEvent () {
-        return;
-      },
+        errorEvent() {
+            return;
+        },
 
-      sendingEvent () {
-        $('#upload-image-modal').modal('toggle');
-      },
+        sendingEvent() {
+            $("#upload-image-modal").modal("toggle");
+        },
 
-      uploadSuccessEvent (file, response) {
-        $('#progress-bar--parent').addClass('m--hide');
-        $('.img-link').each(function() { $(this).attr('src', response.url); });
-        this.$refs.dropzoneImage.removeAllFiles();
-      },
+        uploadSuccessEvent(file, response) {
+            $("#progress-bar--parent").addClass("m--hide");
+            $(".img-link").each(function() {
+                $(this).attr("src", response.url);
+            });
+            this.$refs.dropzoneImage.removeAllFiles();
+        },
 
-      updateProgressEvent (file, progress, bytesSent) {
-        $('#progress-bar--parent').removeClass('m--hide');
-        $('#progress-bar').attr('style', 'width:' + progress + '%; height: 5px;');
-      }
+        updateProgressEvent(file, progress, bytesSent) {
+            $("#progress-bar--parent").removeClass("m--hide");
+            $("#progress-bar").attr(
+                "style",
+                "width:" + progress + "%; height: 5px;"
+            );
+        }
     }
-  }
+};
 </script>
 
 <style>
-  #dropzoneImage {
+#dropzoneImage {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     border-radius: 4px;
-    padding: 40px;
+    padding: 80px;
     background: transparent;
     text-align: center;
-    cursor: pointer; 
-  }
+    cursor: pointer;
+}
 
-  #dropzoneImage .dz-message {
+#dropzoneImage .dz-message {
     margin: 0 0 5px 0;
     padding: 0;
-    font-weight: 100;
-    font-size: 1.1rem; 
-  }
-  #dropzoneImage .note {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+#dropzoneImage .note {
     font-size: 0.85rem;
-    font-weight: 300; 
-  }
-  #dropzoneImage .dz-preview .dz-image {
+    font-weight: 500;
+}
+#dropzoneImage .dz-preview .dz-image {
     border-radius: 20px;
     overflow: hidden;
     width: 120px;
@@ -128,24 +135,24 @@
     position: relative;
     display: block;
     z-index: 10;
-  }
-  #dropzoneImage {
+}
+#dropzoneImage {
     border: none;
-  }	
-  #dropzoneImage .dz-message {
-    color: #6f727d; 
-  }
-  #dropzoneImage .note {
-    color: #6f727d; 
-  }
-  #dropzoneImage:hover,
-  #dropzoneImage .dz-drag-hover .dz-message {
-    opacity: .7;
-  }
-  #dropzoneImage .dz-preview .dz-error-message {
+}
+#dropzoneImage .dz-message {
+    color: #a26ff9;
+}
+#dropzoneImage .note {
+    color: #a26ff9;
+}
+#dropzoneImage:hover,
+#dropzoneImage .dz-drag-hover .dz-message {
+    opacity: 0.7;
+}
+#dropzoneImage .dz-preview .dz-error-message {
     margin-top: 20px;
-  }
-  .dropzoneImage .dz-preview .dz-remove {
+}
+.dropzoneImage .dz-preview .dz-remove {
     margin-top: 5px;
-  }
+}
 </style>

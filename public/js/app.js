@@ -25075,7 +25075,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n#dropzoneVideo {\n    border-radius: 4px;\n    padding: 40px;\n    background: transparent;\n    text-align: center;\n    cursor: pointer;\n}\n#dropzoneVideo .dz-message {\n    margin: 0 0 5px 0;\n    padding: 0;\n    font-weight: 100;\n    font-size: 1.1rem;\n}\n#dropzoneVideo .note {\n    font-size: 0.85rem;\n    font-weight: 300;\n}\n#dropzoneVideo .dz-preview .dz-image {\n    border-radius: 20px;\n    overflow: hidden;\n    width: 120px;\n    height: 120px;\n    position: relative;\n    display: block;\n    z-index: 10;\n}\n#dropzoneVideo {\n    border: none;\n}\n#dropzoneVideo .dz-message {\n    color: #6f727d;\n}\n#dropzoneVideo .note {\n    color: #6f727d;\n}\n#dropzoneVideo:hover,\n#dropzoneVideo .dz-drag-hover .dz-message {\n    opacity: 0.7;\n}\n#dropzoneVideo .dz-preview .dz-error-message {\n    margin-top: 20px;\n}\n.dropzoneVideo .dz-preview .dz-remove {\n    margin-top: 5px;\n}\n", ""]);
+exports.push([module.i, "\n#dropzoneVideo {\n    border-radius: 4px;\n    padding: 80px;\n    background: transparent;\n    text-align: center;\n    cursor: pointer;\n}\n#dropzoneVideo .dz-message {\n    margin: 0 0 5px 0;\n    padding: 0;\n    font-weight: 500;\n    font-size: 1.1rem;\n}\n#dropzoneVideo .note {\n    font-size: 0.85rem;\n    font-weight: 500;\n}\n#dropzoneVideo .dz-preview .dz-image {\n    border-radius: 20px;\n    overflow: hidden;\n    width: 120px;\n    height: 120px;\n    position: relative;\n    display: block;\n    z-index: 10;\n}\n#dropzoneVideo {\n    border: none;\n}\n#dropzoneVideo .dz-message {\n    color: #a26ff9;\n}\n#dropzoneVideo .note {\n    color: #a26ff9;\n}\n#dropzoneVideo:hover,\n#dropzoneVideo .dz-drag-hover .dz-message {\n    opacity: 0.7;\n}\n#dropzoneVideo .dz-preview .dz-error-message {\n    margin-top: 20px;\n}\n.dropzoneVideo .dz-preview .dz-remove {\n    margin-top: 5px;\n}\n", ""]);
 
 // exports
 
@@ -25282,7 +25282,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 dictInvalidFileType: "Unsupported file extension!",
                 dictFileTooBig: "File size exceeds 5MB!",
                 acceptedFiles: "video/*",
-                dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop Your Video Here or Click to Upload <br> <span class="note needsclick">Drag and drop anywhere you want and start uploading your content now.</span>'
+                dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 500; font-size: 65px;"></i> <br> <span style="font-size: 20px;">Drop Your Video Here or Click to Upload</span> <br> <span class="note needsclick" style="font-size: 14px;">Drag and drop anywhere you want and start uploading your content today.</span>'
             }
         };
     },
@@ -26909,7 +26909,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n#dropzoneImage {\n  border-radius: 4px;\n  padding: 40px;\n  background: transparent;\n  text-align: center;\n  cursor: pointer;\n}\n#dropzoneImage .dz-message {\n  margin: 0 0 5px 0;\n  padding: 0;\n  font-weight: 100;\n  font-size: 1.1rem;\n}\n#dropzoneImage .note {\n  font-size: 0.85rem;\n  font-weight: 300;\n}\n#dropzoneImage .dz-preview .dz-image {\n  border-radius: 20px;\n  overflow: hidden;\n  width: 120px;\n  height: 120px;\n  position: relative;\n  display: block;\n  z-index: 10;\n}\n#dropzoneImage {\n  border: none;\n}\n#dropzoneImage .dz-message {\n  color: #6f727d;\n}\n#dropzoneImage .note {\n  color: #6f727d;\n}\n#dropzoneImage:hover,\n#dropzoneImage .dz-drag-hover .dz-message {\n  opacity: .7;\n}\n#dropzoneImage .dz-preview .dz-error-message {\n  margin-top: 20px;\n}\n.dropzoneImage .dz-preview .dz-remove {\n  margin-top: 5px;\n}\n", ""]);
+exports.push([module.i, "\n#dropzoneImage {\n    border-radius: 4px;\n    padding: 80px;\n    background: transparent;\n    text-align: center;\n    cursor: pointer;\n}\n#dropzoneImage .dz-message {\n    margin: 0 0 5px 0;\n    padding: 0;\n    font-weight: 500;\n    font-size: 1.1rem;\n}\n#dropzoneImage .note {\n    font-size: 0.85rem;\n    font-weight: 500;\n}\n#dropzoneImage .dz-preview .dz-image {\n    border-radius: 20px;\n    overflow: hidden;\n    width: 120px;\n    height: 120px;\n    position: relative;\n    display: block;\n    z-index: 10;\n}\n#dropzoneImage {\n    border: none;\n}\n#dropzoneImage .dz-message {\n    color: #a26ff9;\n}\n#dropzoneImage .note {\n    color: #a26ff9;\n}\n#dropzoneImage:hover,\n#dropzoneImage .dz-drag-hover .dz-message {\n    opacity: 0.7;\n}\n#dropzoneImage .dz-preview .dz-error-message {\n    margin-top: 20px;\n}\n.dropzoneImage .dz-preview .dz-remove {\n    margin-top: 5px;\n}\n", ""]);
 
 // exports
 
@@ -26970,54 +26970,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    vueDropzone: __WEBPACK_IMPORTED_MODULE_0_vue2_dropzone___default.a
-  },
-
-  data: function data() {
-    return {
-      dropzoneOptions: {
-        method: 'POST',
-        url: '/upload-image',
-        maxFiles: 1,
-        maxFilesize: 2,
-        paramName: 'image',
-        filesizeBase: 1024,
-        autoProcessQueue: true,
-        chunking: true,
-        retryChunks: true,
-        retryChunksLimit: 2,
-        headers: { 'X-CSRF-Token': this.token },
-        clickable: ['#addNewImage', '#dropzoneImage'],
-        dictMaxFilesExceeded: 'Maximum number of files has been exceeded!',
-        dictInvalidFileType: 'Unsupported file extension!',
-        dictFileTooBig: 'File size exceeds 2MB!',
-        acceptedFiles: 'image/*',
-        dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop an Image or Click to Upload <br> <span class="note needsclick">Drag and drop anywhere you want and start uploading your channel image.</span>'
-      }
-    };
-  },
-
-
-  methods: {
-    errorEvent: function errorEvent() {
-      return;
+    components: {
+        vueDropzone: __WEBPACK_IMPORTED_MODULE_0_vue2_dropzone___default.a
     },
-    sendingEvent: function sendingEvent() {
-      $('#upload-image-modal').modal('toggle');
+
+    data: function data() {
+        return {
+            dropzoneOptions: {
+                method: "POST",
+                url: "/upload-image",
+                maxFiles: 1,
+                maxFilesize: 2,
+                paramName: "image",
+                filesizeBase: 1024,
+                autoProcessQueue: true,
+                chunking: true,
+                retryChunks: true,
+                retryChunksLimit: 2,
+                headers: { "X-CSRF-Token": this.token },
+                clickable: ["#addNewImage", "#dropzoneImage"],
+                dictMaxFilesExceeded: "Maximum number of files has been exceeded!",
+                dictInvalidFileType: "Unsupported file extension!",
+                dictFileTooBig: "File size exceeds 2MB!",
+                acceptedFiles: "image/*",
+                dictDefaultMessage: '<i class="flaticon-multimedia-1" style="font-weight: 500; font-size: 65px;"></i> <br> <span style="font-size: 20px;">Drop an Image or Click to Upload</span> <br> <span class="note needsclick" style="font-size: 14px;">Drag and drop anywhere you want and start uploading your channel image.</span>'
+            }
+        };
     },
-    uploadSuccessEvent: function uploadSuccessEvent(file, response) {
-      $('#progress-bar--parent').addClass('m--hide');
-      $('.img-link').each(function () {
-        $(this).attr('src', response.url);
-      });
-      this.$refs.dropzoneImage.removeAllFiles();
-    },
-    updateProgressEvent: function updateProgressEvent(file, progress, bytesSent) {
-      $('#progress-bar--parent').removeClass('m--hide');
-      $('#progress-bar').attr('style', 'width:' + progress + '%; height: 5px;');
+
+
+    methods: {
+        errorEvent: function errorEvent() {
+            return;
+        },
+        sendingEvent: function sendingEvent() {
+            $("#upload-image-modal").modal("toggle");
+        },
+        uploadSuccessEvent: function uploadSuccessEvent(file, response) {
+            $("#progress-bar--parent").addClass("m--hide");
+            $(".img-link").each(function () {
+                $(this).attr("src", response.url);
+            });
+            this.$refs.dropzoneImage.removeAllFiles();
+        },
+        updateProgressEvent: function updateProgressEvent(file, progress, bytesSent) {
+            $("#progress-bar--parent").removeClass("m--hide");
+            $("#progress-bar").attr("style", "width:" + progress + "%; height: 5px;");
+        }
     }
-  }
 });
 
 /***/ }),

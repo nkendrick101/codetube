@@ -161,7 +161,7 @@ export default {
                 dictFileTooBig: "File size exceeds 5MB!",
                 acceptedFiles: "video/*",
                 dictDefaultMessage:
-                    '<i class="flaticon-multimedia-1" style="font-weight: 300; font-size: 65px; opacity: .5;"></i> <br> Drop Your Video Here or Click to Upload <br> <span class="note needsclick">Drag and drop anywhere you want and start uploading your content now.</span>'
+                    '<i class="flaticon-multimedia-1" style="font-weight: 500; font-size: 65px;"></i> <br> <span style="font-size: 20px;">Drop Your Video Here or Click to Upload</span> <br> <span class="note needsclick" style="font-size: 14px;">Drag and drop anywhere you want and start uploading your content today.</span>'
             }
         };
     },
@@ -243,7 +243,7 @@ export default {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     border-radius: 4px;
-    padding: 40px;
+    padding: 80px;
     background: transparent;
     text-align: center;
     cursor: pointer;
@@ -252,12 +252,12 @@ export default {
 #dropzoneVideo .dz-message {
     margin: 0 0 5px 0;
     padding: 0;
-    font-weight: 100;
+    font-weight: 500;
     font-size: 1.1rem;
 }
 #dropzoneVideo .note {
     font-size: 0.85rem;
-    font-weight: 300;
+    font-weight: 500;
 }
 #dropzoneVideo .dz-preview .dz-image {
     border-radius: 20px;
@@ -272,10 +272,10 @@ export default {
     border: none;
 }
 #dropzoneVideo .dz-message {
-    color: #6f727d;
+    color: #a26ff9;
 }
 #dropzoneVideo .note {
-    color: #6f727d;
+    color: #a26ff9;
 }
 #dropzoneVideo:hover,
 #dropzoneVideo .dz-drag-hover .dz-message {
