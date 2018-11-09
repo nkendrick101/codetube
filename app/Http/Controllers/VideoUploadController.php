@@ -23,7 +23,7 @@ class VideoUploadController extends Controller
       $channel = $request->user()->channel()->first();
       $video_model = $channel->videos()->where('uuid', $request->uuid)->firstOrFail();
       $video_file = $saver->getFile();
-      $video_file->move(public_path('files') . '/', $video_model->video_filename);
+      $video_file->move(public_path('uploads') . '/', $video_model->video_filename);
       $this->dispatch(new TranscodeVideo($video_model->video_filename));
     }
 
