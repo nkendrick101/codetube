@@ -62,7 +62,7 @@ class TranscodeVideo implements ShouldQueue
       $my_video->processed = true;
       $my_video->save();
     } catch (\Exception $e) {
-      var_dump($e);
+      echo $e;
     } 
   }
 }
