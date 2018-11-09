@@ -51,9 +51,10 @@ class LoginController extends Controller
       return redirect('/');
     }
 
-    if (User::where('email', $social_user->email)->count()) {
-      return redirect()->back()->with('status', 'Email address has been already taken.');
-    }
+    // TODO Handle this
+    /*if (User::where('email', $social_user->email)->count()) {
+      return back()->with('notification', 'Email address has been already taken.');
+    }*/
 
     $field = $social_network . '_id';
     $user = User::where($field, $social_user->id)->first();
