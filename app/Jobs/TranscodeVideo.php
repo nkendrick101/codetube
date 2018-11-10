@@ -32,7 +32,7 @@ class TranscodeVideo implements ShouldQueue
     ]);
 
     try {
-      $media = $ffmpeg->open(public_path('files') . '/' . $this->filename);
+      $media = $ffmpeg->open(public_path('uploads') . '/' . $this->filename);
       $my_video = Video::where('video_filename', $this->filename)->firstOrFail();
       $format = new FFMpeg\Format\Video\WebM();
 
@@ -42,20 +42,20 @@ class TranscodeVideo implements ShouldQueue
       });
 
       $video_id = uniqid(true);
-      $media->save($format, public_path('files') . '/' . $video_id . '.webm');
-      $media->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(12))->save(public_path('files') . '/' . $video_id . '.jpg');
+      $media->save($format, public_path('uploads') . '/' . $video_id . '.webm');
+      $media->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(12))->save(public_path('uploads') . '/' . $video_id . '.jpg');
 
       // Resize thumbnail
-      Image::make(public_path('files') . '/' . $video_id . '.jpg')->fit(1280, 600, function($c) { $c->upsize(); })->save();
+      Image::make(public_path('uploads') . '/' . $video_id . '.jpg')->fit(1280, 600, function($c) { $c->upsize(); })->save();
 
       // Push video and thumbnail into the cloud
-      Storage::disk('gcs_videos')->put($video_id . '.webm', file_get_contents(public_path('files') . '/' . $video_id . '.webm'), 'public');
-      Storage::disk('gcs_videos')->put($video_id . '.jpg', file_get_contents(public_path('files') . '/' . $video_id . '.jpg'), 'public');
+      Storage::disk('gcs_videos')->put($video_id . '.webm', file_get_contents(public_path('uploads') . '/' . $video_id . '.webm'), 'public');
+      Storage::disk('gcs_videos')->put($video_id . '.jpg', file_get_contents(public_path('uploads') . '/' . $video_id . '.jpg'), 'public');
 
       // Apply local delete subsquently
-      File::delete(public_path('files') . '/' . $this->filename);
-      File::delete(public_path('files') . '/' . $video_id . '.webm');
-      File::delete(public_path('files') . '/' . $video_id . '.jpg');
+      File::delete(public_path('uploads') . '/' . $this->filename);
+      File::delete(public_path('uploads') . '/' . $video_id . '.webm');
+      File::delete(public_path('uploads') . '/' . $video_id . '.jpg');
 
       // Record transcoding proccess
       $my_video->video_id = $video_id;
