@@ -14,7 +14,7 @@
             <div class="m-portlet__head-tools">
               <ul class="m-portlet__nav">
                 <li class="m-portlet__nav-item m-portlet__nav-item--last">
-                  <a id="addNewImage" href="#" class="btn btn-sm btn-focus m-btn m-btn--wide m-btn--pill m-btn--air m-btn--custom m-btn--bolder">
+                  <a id="addNewImage" href="#" class="btn btn-sm btn-focus m-btn m-btn--wide m-btn--air m-btn--custom m-btn--bolder">
                     UPLOAD
                   </a>
                 </li>

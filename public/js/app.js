@@ -24357,52 +24357,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Plyr: __WEBPACK_IMPORTED_MODULE_0_vue_plyr__["a" /* Plyr */]
-  },
-
-  data: function data() {
-    return {
-      player: null,
-      duration: null,
-      token: document.getElementById('csrf-token').getAttribute('content')
-    };
-  },
-
-
-  props: {
-    videoUuid: null,
-    videoUrl: null,
-    thumbnailUrl: null
-  },
-
-  methods: {
-    hasHitQuotaView: function hasHitQuotaView() {
-      if (!this.player.duration) {
-        return false;
-      }
-
-      return Math.round(this.player.currentTime) === Math.round(10 * this.player.duration / 100);
+    components: {
+        Plyr: __WEBPACK_IMPORTED_MODULE_0_vue_plyr__["a" /* Plyr */]
     },
-    createView: function createView() {
-      this.$http.post('/videos/' + this.videoUuid + '/view', {
-        _token: this.token
-      });
+
+    data: function data() {
+        return {
+            player: null,
+            duration: null,
+            token: document.getElementById("csrf-token").getAttribute("content")
+        };
+    },
+
+
+    props: {
+        videoUuid: null,
+        videoUrl: null,
+        thumbnailUrl: null
+    },
+
+    methods: {
+        hasHitQuotaView: function hasHitQuotaView() {
+            if (!this.player.duration) {
+                return false;
+            }
+
+            return Math.round(this.player.currentTime) === Math.round(10 * this.player.duration / 100);
+        },
+        createView: function createView() {
+            this.$http.post("/videos/" + this.videoUuid + "/view", {
+                _token: this.token
+            });
+        }
+    },
+
+    mounted: function mounted() {
+        var _this = this;
+
+        this.player = this.$refs.player.player;
+        this.player.play();
+
+        setInterval(function () {
+            if (_this.hasHitQuotaView()) {
+                _this.createView();
+            }
+        }, 1000);
     }
-  },
-
-  mounted: function mounted() {
-    var _this = this;
-
-    this.player = this.$refs.player.player;
-    this.player.play();
-
-    setInterval(function () {
-      if (_this.hasHitQuotaView()) {
-        _this.createView();
-      }
-    }, 1000);
-  }
 });
 
 /***/ }),
@@ -25746,7 +25746,7 @@ var staticRenderFns = [
                   "a",
                   {
                     staticClass:
-                      "btn btn-sm btn-focus m-btn m-btn--wide m-btn--pill m-btn--air m-btn--custom m-btn--bolder",
+                      "btn btn-sm btn-focus m-btn m-btn--wide m-btn--air m-btn--custom m-btn--bolder",
                     attrs: { id: "addNewVideo", href: "#" }
                   },
                   [_vm._v("\n                  UPLOAD\n                ")]
@@ -27102,7 +27102,7 @@ var staticRenderFns = [
                   "a",
                   {
                     staticClass:
-                      "btn btn-sm btn-focus m-btn m-btn--wide m-btn--pill m-btn--air m-btn--custom m-btn--bolder",
+                      "btn btn-sm btn-focus m-btn m-btn--wide m-btn--air m-btn--custom m-btn--bolder",
                     attrs: { id: "addNewImage", href: "#" }
                   },
                   [_vm._v("\n                  UPLOAD\n                ")]
