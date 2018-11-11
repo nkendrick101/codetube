@@ -24395,7 +24395,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         this.player = this.$refs.player.player;
-        this.player.play();
 
         setInterval(function () {
             if (_this.hasHitQuotaView()) {

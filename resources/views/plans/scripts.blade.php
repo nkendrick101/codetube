@@ -172,7 +172,7 @@
     }
 
     if (!errNumber.length && !errDate.length && !errCVV.length && !errZip.length) {
-      $(this).removeClass().addClass('btn btn-sm btn-focus m-btn m-btn--custom m-btn--wide m-btn--icon join-plan m-loader m-loader--light m-loader--right');
+      $(this).removeClass().addClass('btn btn-sm btn-focus m-btn m-btn--custom m-btn--wide m-btn--icon join-plan m-loader m-loader--light m-loader--right disabled');
       $(this).html('Joining');
 
       // Tokenize credit card

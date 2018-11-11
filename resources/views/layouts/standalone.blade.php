@@ -25,5 +25,24 @@
     <script src="{{ asset('js/vendors.bundle.js') }}"></script>
     <script src="{{ asset('js/scripts.bundle.js') }}"></script>
     <script src="{{ asset('js/page-preloading.js') }}"></script>
+    <script>
+      $('#signin-btn, #signup-btn, #send-password-btn, #reset-password-btn').on('click', function () {
+        $(this).removeClass().addClass('btn btn-focus btn-block m-btn m-btn--air m-btn--custom m-login__btn m-login__btn--primary m-loader m-loader--light m-loader--right disabled');
+        const id = $(this)[0].id;
+
+        if (id === 'signin-btn') {
+          $(this).html('SIGNING IN');
+        }
+        else if (id === 'signup-btn') {
+          $(this).html('SIGNING UP');
+        }
+        else if (id === 'send-password-btn') {
+          $(this).html('SENDING');
+        }
+        else if (id === 'reset-password-btn') {
+          $(this).html('RESETTING');
+        }
+      });  
+    </script>
   </body>
 </html>

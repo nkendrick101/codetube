@@ -43,7 +43,7 @@
 
   $('.save-btn').click(function(event) {
     event.preventDefault();
-    $(this).removeClass().addClass('btn btn-sm btn-focus m-btn m-btn--custom m-btn--wide m-btn--icon m-loader m-loader--light m-loader--right');
+    $(this).removeClass().addClass('btn btn-sm btn-focus m-btn m-btn--custom m-btn--wide m-btn--icon m-loader m-loader--light m-loader--right disabled');
     $(this).html('Saving');
     $(this).closest('form').submit();
   });

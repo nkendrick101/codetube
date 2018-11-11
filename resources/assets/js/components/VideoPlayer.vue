@@ -50,7 +50,6 @@ export default {
 
     mounted() {
         this.player = this.$refs.player.player;
-        this.player.play();
 
         setInterval(() => {
             if (this.hasHitQuotaView()) {
